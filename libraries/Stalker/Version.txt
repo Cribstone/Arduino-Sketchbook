@@ -1,0 +1,2 @@
+20-Feb-2012 Arduino 1.0 compatible library released
+12-Dec-2011 Bug fix version

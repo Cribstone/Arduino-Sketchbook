@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/FP_SW_000047/!svn/ver/14/trunk/D2XX/src/libftd2xx/newlibusb
+END
+error.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/FP_SW_000047/!svn/ver/14/trunk/D2XX/src/libftd2xx/newlibusb/error.h
+END
+usb.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/FP_SW_000047/!svn/ver/14/trunk/D2XX/src/libftd2xx/newlibusb/usb.h
+END
+descriptors.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/FP_SW_000047/!svn/ver/14/trunk/D2XX/src/libftd2xx/newlibusb/descriptors.c
+END
+darwin.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/FP_SW_000047/!svn/ver/14/trunk/D2XX/src/libftd2xx/newlibusb/darwin.c
+END
+usbi.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/FP_SW_000047/!svn/ver/14/trunk/D2XX/src/libftd2xx/newlibusb/usbi.h
+END
+error.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/FP_SW_000047/!svn/ver/14/trunk/D2XX/src/libftd2xx/newlibusb/error.c
+END
+usb.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/FP_SW_000047/!svn/ver/14/trunk/D2XX/src/libftd2xx/newlibusb/usb.c
+END

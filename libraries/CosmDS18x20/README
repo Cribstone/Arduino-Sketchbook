@@ -1,0 +1,1 @@
+Nanode/Arduino sketch that reads temperature from a DS18x20 1-wire digital thermometer and uses it to update a Cosm feed.

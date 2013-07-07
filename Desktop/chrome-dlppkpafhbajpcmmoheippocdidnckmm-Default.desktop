@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Name=Google+
+Exec=/opt/google/chrome/google-chrome --app-id=dlppkpafhbajpcmmoheippocdidnckmm --profile-directory=Default
+Terminal=false
+Icon=chrome-dlppkpafhbajpcmmoheippocdidnckmm-Default
+Type=Application
+Categories=Network;WebBrowser;
+StartupWMClass=crx_dlppkpafhbajpcmmoheippocdidnckmm

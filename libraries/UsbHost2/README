@@ -1,0 +1,10 @@
+This is Rev.2.0 of MAX3421E-based USB Host Shield Library. Project web site is http://www.circuitsathome.com
+
+Note from the Arduino Team:
+
+this is unstable on Arduino ADK (and probably on other ADK compatible boards). We are working on getting this
+fixed, but has a low priority as the USB_Host_Shield v1.0 library works in a VERY reliable way. Since this is FREE
+SOFTWARE, feel free to take the code and see if you can patch it. We will be happy to include your suggestions
+in the code.
+
+It is of course based in the original by CircuitsAtHome.com and has been patched by Follower (RancidBacon.com)
