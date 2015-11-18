@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)http://lelylan.github.io/lab-projects/arduino-yun-light/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+    <title>Create your own smart light using Arduino Yun</title>
+    <link rel="stylesheet" href="http://lelylan.github.io/lab-projects/public/style.css">
+    <link rel="stylesheet" href="http://lelylan.github.io/lab-projects/public/icons/css/slate.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Italiana&subset=latin">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  </head>
+  <body class=" hasGoogleVoiceExt">
+
+    <section id="top">
+
+    <div class="lelylan-back">
+      <a href="http://lelylan.github.io/lab-ng/#/" target="_blank"><img src="./Create your own smart light using Arduino Yun_files/lab-logo.png" alt="Lelylan Lab"></a>
+    </div>
+
+    <div id="menu">
+      <a id="toggle" href="http://lelylan.github.io/lab-projects/arduino-yun-light/#">
+        <i class="icon-menu"></i>
+      </a>
+      <ul>
+        <li><a href="http://lelylan.github.io/lab-projects/arduino-yun-light/#hardware">Hardware</a></li>
+        <li><a href="http://lelylan.github.io/lab-projects/arduino-yun-light/#software">Software</a></li>
+        <li><a href="http://lelylan.github.io/lab-projects/arduino-yun-light/#hardware-setup">Hardware setup</a></li>
+        <li><a href="http://lelylan.github.io/lab-projects/arduino-yun-light/#lelylan-setup">Lelylan setup</a></li>
+        <li><a href="http://lelylan.github.io/lab-projects/arduino-yun-light/#code">Code</a></li>
+        <li><a href="http://lelylan.github.io/lab-projects/arduino-yun-light/#done">You are done</a></li>
+        <li><a href="http://lelylan.github.io/lab-projects/arduino-yun-light/#code-explained">Code explained</a></li>
+        <li><a href="http://lelylan.github.io/lab-projects/arduino-yun-light/#troubleshooting">Troubleshooting</a></li>
+        <li><a href="http://lelylan.github.io/lab-projects/arduino-yun-light/#inspired">Get inspired</a></li>
+        <li><a href="http://lelylan.github.io/lab-projects/arduino-yun-light/#thanks">Thanks</a></li>
+      </ul>
+    </div>
+
+    <div id="heading">
+      <div id="logo">Create your own smart light<br> using Arduino Yun</div>
+      <div id="tagline">
+        <p>
+        Learn how to control and monitor your lights from mobile, tablet and desktop.<br>
+        15 minutes | $80 in hardware | basic level
+        </p>
+      </div>
+      <div id="share-buttons">
+      <!-- Facebook -->
+      <a href="http://www.facebook.com/sharer.php?u=http://lelylan.github.io/lab-projects/arduino-yun-light" target="_blank"><img src="./Create your own smart light using Arduino Yun_files/facebook.png" alt="Facebook"></a>
+      <!-- Twitter -->
+      <a href="http://twitter.com/share?url=http://lelylan.github.io/lab-projects/arduino-yun-light&text=Create%20your%20own%20smart%20light%20using%20Arduino%20Yun&hashtags=iot" target="_blank"><img src="./Create your own smart light using Arduino Yun_files/twitter.png" alt="Twitter"></a>
+      <!-- Google+ -->
+      <a href="https://plus.google.com/share?url=http://lelylan.github.io/lab-projects/arduino-yun-light" target="_blank"><img src="./Create your own smart light using Arduino Yun_files/google.png" alt="Google"></a>
+      <!-- Digg -->
+      <a href="http://www.digg.com/submit?url=http://lelylan.github.io/lab-projects/arduino-yun-light" target="_blank"><img src="./Create your own smart light using Arduino Yun_files/diggit.png" alt="Digg"></a>
+      <!-- Reddit -->
+      <a href="http://reddit.com/submit?url=http://lelylan.github.io/lab-projects/arduino-yun-light&title=Create%20your%20own%20smart%20light%20using%20Arduino%20Yun" target="_blank"><img src="./Create your own smart light using Arduino Yun_files/reddit.png" alt="Reddit"></a>
+      <!-- LinkedIn -->
+      <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://lelylan.github.io/lab-projects/arduino-yun-light" target="_blank"><img src="./Create your own smart light using Arduino Yun_files/linkedin.png" alt="LinkedIn"></a>
+      <!-- Pinterest -->
+      <a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());"><img src="./Create your own smart light using Arduino Yun_files/pinterest.png" alt="Pinterest"></a>
+      <!-- StumbleUpon-->
+      <a href="http://www.stumbleupon.com/submit?url=http://lelylan.github.io/lab-projects/arduino-yun-light&title=Create%20your%20smart%20light%20using%20Arduino%20Yun" target="_blank"><img src="./Create your own smart light using Arduino Yun_files/stumbleupon.png" alt="StumbleUpon"></a>
+      <!-- Email -->
+      <a href="mailto:?Subject=Create%20your%20own%20smart%20light%20using%20Arduino%20Yun&Body=I%20saw%20this%20and%20thought%20of%20you!%20%20http://lelylan.github.io/lab-projects/arduino-yun-light"><img src="./Create your own smart light using Arduino Yun_files/email.png" alt="Email"></a>
+      </div>
+      <div class="center">
+        <img src="./Create your own smart light using Arduino Yun_files/header.jpg" class="bordered">
+      <div>
+      <div>
+        <a href="https://github.com/lelylan/lab-projects/blob/gh-pages/arduino-yun-light/index.html" target="_blank">
+          <img title="Edit on Github" src="./Create your own smart light using Arduino Yun_files/GitHub-Mark-64px.png" class="github">
+        </a>
+      </div>
+    </div>
+    </div></div></section>
+
+    <section>
+    <div class="content">
+      <h1 id="hardware">Hardware</h1>
+
+      <p>
+      To complete this tutorial you need the following components.
+      </p><p>
+
+      </p><table class="table table-stripped table-hover">
+        <thead>
+          <tr>
+            <th>Components</th>
+            <th>Buy</th>
+            <th>Price</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Arduino Yun</td>
+            <td><a href="http://store.arduino.cc/index.php?main_page=product_info&cPath=11&products_id=313">Arduino Store</a></td>
+            <td>$64.60 + VAT</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>Push button</td>
+            <td><a href="https://www.sparkfun.com/products/9590" target="_blank">Component packs</a></td>
+            <td>$0.35</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>Led</td>
+            <td><a href="https://www.sparkfun.com/products/9590" target="_blank">Component packs</a></td>
+            <td>$0.35</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>10K Ohm resistor</td>
+            <td><a href="https://www.sparkfun.com/products/10969" target="_blank">Resistor kit</a></td>
+            <td>$0.5</td>
+            <td>2</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+    </section>
+
+    <section>
+    <div class="content">
+      <h1 id="software">Software</h1>
+
+      <p>
+      To program your Arduino Yun you need to install the
+      <a href="http://arduino.cc/en/main/software">Arduino IDE</a>
+      and the following libraries (if you do not know how to install a library checkout this
+      <a href="http://arduino.cc/en/Guide/Libraries">tutorial</a>).
+      </p>
+
+      <table class="table table-stripped">
+        <thead>
+          <tr>
+            <th style="width: 160px">Library</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://github.com/andreareginato/pubsubclient">PubSubClient</a></td>
+            <td>
+              This is a fork of the <a href="https://github.com/knolleary/pubsubclient">original</a>
+              PubSubClient setting the <a href="http://knolleary.net/client-for-mqtt/api/#configoptions">max packet size</a>
+              to 512 bytes (needed for Lelylan to work).
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+    </section>
+
+    <section>
+    <div class="content">
+      <h1 id="hardware-setup">Hardware Setup</h1>
+
+      <p>
+      This schema represents the led, resistor and pushbutton setup. With this setup
+      each time you press the button, the LED is turned on and off.
+      </p>
+
+      <img src="./Create your own smart light using Arduino Yun_files/components.png" class="bordered">
+
+    </div>
+    </section>
+
+
+    <section>
+    <div class="content">
+
+      <h1 id="lelylan-setup">Lelylan Setup</h1>
+
+      <p>
+      Open <a href="http://lelylan.github.io/devices-dashboard-ng/">Lelylan Dashboard</a>
+      and create a new device by following 3 simple steps (if you are new to Lelylan, you can
+      <a href="http://people.lelylan.com/users/sign_up">sign up</a> for free).
+      </p>
+
+      <h3>1) Set a meaningful name (e.g. bedroom light).</h3>
+
+      <img src="./Create your own smart light using Arduino Yun_files/step-1.png" class="bordered">
+
+      <h3>2) Choose the device type. For this tutorial choose <em>Basic Light</em>.</h3>
+
+      <p>
+      What is a type? A type defines what a device is by defining its properties,
+      functions and statuses. For this tutorial you do not need to now more about.
+      </p>
+
+      <img src="./Create your own smart light using Arduino Yun_files/step-2.png" class="bordered">
+
+      <h3>3) Choose <em>"Connect with MQTT"</em> as connectivity option.</h3>
+
+      <p>
+      In this tutorial we'll use MQTT, a publish subscribe protocol for the Internet of Things.
+      </p>
+
+      <img src="./Create your own smart light using Arduino Yun_files/step-3.png" class="bordered">
+
+      <h3>4) Get the Device ID and Device Secret.</h3>
+      <p>
+        Once the device is created, click the settings link (placed under the device name)
+        and get the device ID and device secret. You'll need them in the next section.
+      </p>
+      <img src="./Create your own smart light using Arduino Yun_files/step-4-a.png" class="bordered" style="margin-bottom:0">
+      <img src="./Create your own smart light using Arduino Yun_files/step-4.png" class="bordered" style="margin-top:0">
+
+    </div>
+    </section>
+
+
+    <section>
+    <div class="content">
+
+      <h1 id="code">Code</h1>
+
+      <p>
+      Once the (virtual) device is defined on Lelylan you need to make it communicate with
+      Arduino. Copy the sketch below and change the following variables:
+      <code>deviceId</code>, <code>deviceSecret</code>,
+      <code>outTopic</code>, <code>inTopic</code> and <code>clientId</code>.
+      It will not take more than one minute.
+      </p>
+
+      <script src="./Create your own smart light using Arduino Yun_files/247d012d4da4f23e52a6.js"></script><link rel="stylesheet" href="https://gist-assets.github.com/assets/embed-8bf0013c72fb64f0bb1bc1872b43e39e.css"><div id="gist16780673" class="gist">
+        <div class="gist-file">
+          <div class="gist-data gist-syntax">
+            
+
+
+
+    <div class="file-data">
+      <table cellpadding="0" cellspacing="0" class="lines highlight">
+        <tbody><tr>
+          <td class="line-numbers">
+            <span class="line-number" id="file-arduino-yun-light-ino-L1" rel="file-arduino-yun-light-ino-L1">1</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L2" rel="file-arduino-yun-light-ino-L2">2</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L3" rel="file-arduino-yun-light-ino-L3">3</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L4" rel="file-arduino-yun-light-ino-L4">4</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L5" rel="file-arduino-yun-light-ino-L5">5</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L6" rel="file-arduino-yun-light-ino-L6">6</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L7" rel="file-arduino-yun-light-ino-L7">7</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L8" rel="file-arduino-yun-light-ino-L8">8</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L9" rel="file-arduino-yun-light-ino-L9">9</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L10" rel="file-arduino-yun-light-ino-L10">10</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L11" rel="file-arduino-yun-light-ino-L11">11</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L12" rel="file-arduino-yun-light-ino-L12">12</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L13" rel="file-arduino-yun-light-ino-L13">13</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L14" rel="file-arduino-yun-light-ino-L14">14</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L15" rel="file-arduino-yun-light-ino-L15">15</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L16" rel="file-arduino-yun-light-ino-L16">16</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L17" rel="file-arduino-yun-light-ino-L17">17</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L18" rel="file-arduino-yun-light-ino-L18">18</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L19" rel="file-arduino-yun-light-ino-L19">19</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L20" rel="file-arduino-yun-light-ino-L20">20</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L21" rel="file-arduino-yun-light-ino-L21">21</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L22" rel="file-arduino-yun-light-ino-L22">22</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L23" rel="file-arduino-yun-light-ino-L23">23</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L24" rel="file-arduino-yun-light-ino-L24">24</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L25" rel="file-arduino-yun-light-ino-L25">25</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L26" rel="file-arduino-yun-light-ino-L26">26</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L27" rel="file-arduino-yun-light-ino-L27">27</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L28" rel="file-arduino-yun-light-ino-L28">28</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L29" rel="file-arduino-yun-light-ino-L29">29</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L30" rel="file-arduino-yun-light-ino-L30">30</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L31" rel="file-arduino-yun-light-ino-L31">31</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L32" rel="file-arduino-yun-light-ino-L32">32</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L33" rel="file-arduino-yun-light-ino-L33">33</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L34" rel="file-arduino-yun-light-ino-L34">34</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L35" rel="file-arduino-yun-light-ino-L35">35</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L36" rel="file-arduino-yun-light-ino-L36">36</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L37" rel="file-arduino-yun-light-ino-L37">37</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L38" rel="file-arduino-yun-light-ino-L38">38</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L39" rel="file-arduino-yun-light-ino-L39">39</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L40" rel="file-arduino-yun-light-ino-L40">40</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L41" rel="file-arduino-yun-light-ino-L41">41</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L42" rel="file-arduino-yun-light-ino-L42">42</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L43" rel="file-arduino-yun-light-ino-L43">43</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L44" rel="file-arduino-yun-light-ino-L44">44</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L45" rel="file-arduino-yun-light-ino-L45">45</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L46" rel="file-arduino-yun-light-ino-L46">46</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L47" rel="file-arduino-yun-light-ino-L47">47</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L48" rel="file-arduino-yun-light-ino-L48">48</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L49" rel="file-arduino-yun-light-ino-L49">49</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L50" rel="file-arduino-yun-light-ino-L50">50</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L51" rel="file-arduino-yun-light-ino-L51">51</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L52" rel="file-arduino-yun-light-ino-L52">52</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L53" rel="file-arduino-yun-light-ino-L53">53</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L54" rel="file-arduino-yun-light-ino-L54">54</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L55" rel="file-arduino-yun-light-ino-L55">55</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L56" rel="file-arduino-yun-light-ino-L56">56</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L57" rel="file-arduino-yun-light-ino-L57">57</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L58" rel="file-arduino-yun-light-ino-L58">58</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L59" rel="file-arduino-yun-light-ino-L59">59</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L60" rel="file-arduino-yun-light-ino-L60">60</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L61" rel="file-arduino-yun-light-ino-L61">61</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L62" rel="file-arduino-yun-light-ino-L62">62</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L63" rel="file-arduino-yun-light-ino-L63">63</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L64" rel="file-arduino-yun-light-ino-L64">64</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L65" rel="file-arduino-yun-light-ino-L65">65</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L66" rel="file-arduino-yun-light-ino-L66">66</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L67" rel="file-arduino-yun-light-ino-L67">67</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L68" rel="file-arduino-yun-light-ino-L68">68</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L69" rel="file-arduino-yun-light-ino-L69">69</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L70" rel="file-arduino-yun-light-ino-L70">70</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L71" rel="file-arduino-yun-light-ino-L71">71</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L72" rel="file-arduino-yun-light-ino-L72">72</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L73" rel="file-arduino-yun-light-ino-L73">73</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L74" rel="file-arduino-yun-light-ino-L74">74</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L75" rel="file-arduino-yun-light-ino-L75">75</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L76" rel="file-arduino-yun-light-ino-L76">76</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L77" rel="file-arduino-yun-light-ino-L77">77</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L78" rel="file-arduino-yun-light-ino-L78">78</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L79" rel="file-arduino-yun-light-ino-L79">79</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L80" rel="file-arduino-yun-light-ino-L80">80</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L81" rel="file-arduino-yun-light-ino-L81">81</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L82" rel="file-arduino-yun-light-ino-L82">82</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L83" rel="file-arduino-yun-light-ino-L83">83</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L84" rel="file-arduino-yun-light-ino-L84">84</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L85" rel="file-arduino-yun-light-ino-L85">85</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L86" rel="file-arduino-yun-light-ino-L86">86</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L87" rel="file-arduino-yun-light-ino-L87">87</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L88" rel="file-arduino-yun-light-ino-L88">88</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L89" rel="file-arduino-yun-light-ino-L89">89</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L90" rel="file-arduino-yun-light-ino-L90">90</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L91" rel="file-arduino-yun-light-ino-L91">91</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L92" rel="file-arduino-yun-light-ino-L92">92</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L93" rel="file-arduino-yun-light-ino-L93">93</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L94" rel="file-arduino-yun-light-ino-L94">94</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L95" rel="file-arduino-yun-light-ino-L95">95</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L96" rel="file-arduino-yun-light-ino-L96">96</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L97" rel="file-arduino-yun-light-ino-L97">97</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L98" rel="file-arduino-yun-light-ino-L98">98</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L99" rel="file-arduino-yun-light-ino-L99">99</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L100" rel="file-arduino-yun-light-ino-L100">100</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L101" rel="file-arduino-yun-light-ino-L101">101</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L102" rel="file-arduino-yun-light-ino-L102">102</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L103" rel="file-arduino-yun-light-ino-L103">103</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L104" rel="file-arduino-yun-light-ino-L104">104</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L105" rel="file-arduino-yun-light-ino-L105">105</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L106" rel="file-arduino-yun-light-ino-L106">106</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L107" rel="file-arduino-yun-light-ino-L107">107</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L108" rel="file-arduino-yun-light-ino-L108">108</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L109" rel="file-arduino-yun-light-ino-L109">109</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L110" rel="file-arduino-yun-light-ino-L110">110</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L111" rel="file-arduino-yun-light-ino-L111">111</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L112" rel="file-arduino-yun-light-ino-L112">112</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L113" rel="file-arduino-yun-light-ino-L113">113</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L114" rel="file-arduino-yun-light-ino-L114">114</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L115" rel="file-arduino-yun-light-ino-L115">115</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L116" rel="file-arduino-yun-light-ino-L116">116</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L117" rel="file-arduino-yun-light-ino-L117">117</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L118" rel="file-arduino-yun-light-ino-L118">118</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L119" rel="file-arduino-yun-light-ino-L119">119</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L120" rel="file-arduino-yun-light-ino-L120">120</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L121" rel="file-arduino-yun-light-ino-L121">121</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L122" rel="file-arduino-yun-light-ino-L122">122</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L123" rel="file-arduino-yun-light-ino-L123">123</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L124" rel="file-arduino-yun-light-ino-L124">124</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L125" rel="file-arduino-yun-light-ino-L125">125</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L126" rel="file-arduino-yun-light-ino-L126">126</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L127" rel="file-arduino-yun-light-ino-L127">127</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L128" rel="file-arduino-yun-light-ino-L128">128</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L129" rel="file-arduino-yun-light-ino-L129">129</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L130" rel="file-arduino-yun-light-ino-L130">130</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L131" rel="file-arduino-yun-light-ino-L131">131</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L132" rel="file-arduino-yun-light-ino-L132">132</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L133" rel="file-arduino-yun-light-ino-L133">133</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L134" rel="file-arduino-yun-light-ino-L134">134</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L135" rel="file-arduino-yun-light-ino-L135">135</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L136" rel="file-arduino-yun-light-ino-L136">136</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L137" rel="file-arduino-yun-light-ino-L137">137</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L138" rel="file-arduino-yun-light-ino-L138">138</span>
+            <span class="line-number" id="file-arduino-yun-light-ino-L139" rel="file-arduino-yun-light-ino-L139">139</span>
+          </td>
+          <td class="line-data">
+            <pre class="line-pre"><div class="line" id="file-arduino-yun-light-ino-LC1">#<span class="pl-k">include</span> <span class="pl-s1"><span class="pl-pds">&lt;</span>SPI.h<span class="pl-pds">&gt;</span></span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC2">#<span class="pl-k">include</span> <span class="pl-s1"><span class="pl-pds">&lt;</span>YunClient.h<span class="pl-pds">&gt;</span></span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC3">#<span class="pl-k">include</span> <span class="pl-s1"><span class="pl-pds">&lt;</span>PubSubClient.h<span class="pl-pds">&gt;</span></span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC4">&nbsp;
+</div><div class="line" id="file-arduino-yun-light-ino-LC5">&nbsp;
+</div><div class="line" id="file-arduino-yun-light-ino-LC6"><span class="pl-c">/* ------------------ */</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC7"><span class="pl-c">/* SKETCH CREDENTIALS */</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC8"><span class="pl-c">/* ------------------ */</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC9"> 
+</div><div class="line" id="file-arduino-yun-light-ino-LC10"><span class="pl-st">char</span>* deviceId     = <span class="pl-s1"><span class="pl-pds">"</span>&lt;DEVICE-ID&gt;<span class="pl-pds">"</span></span>;             <span class="pl-c">// * set your device id (will be the MQTT client username)</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC11"><span class="pl-st">char</span>* deviceSecret = <span class="pl-s1"><span class="pl-pds">"</span>&lt;DEVICE-SECRET&gt;<span class="pl-pds">"</span></span>;         <span class="pl-c">// * set your device secret (will be the MQTT client password)</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC12"><span class="pl-st">char</span>* outTopic     = <span class="pl-s1"><span class="pl-pds">"</span>devices/&lt;DEVICE-ID&gt;/set<span class="pl-pds">"</span></span>; <span class="pl-c">// * MQTT channel where physical updates are published</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC13"><span class="pl-st">char</span>* inTopic      = <span class="pl-s1"><span class="pl-pds">"</span>devices/&lt;DEVICE-ID&gt;/get<span class="pl-pds">"</span></span>; <span class="pl-c">// * MQTT channel where lelylan updates are received</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC14"><span class="pl-st">char</span>* clientId     = <span class="pl-s1"><span class="pl-pds">"</span>&lt;CLIENT-ID&gt;<span class="pl-pds">"</span></span>;             <span class="pl-c">// * set a random string (max 23 chars, will be the MQTT client id)</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC15"> 
+</div><div class="line" id="file-arduino-yun-light-ino-LC16"> 
+</div><div class="line" id="file-arduino-yun-light-ino-LC17"><span class="pl-c">/* ------------ */</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC18"><span class="pl-c">/* SKETCH LOGIC */</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC19"><span class="pl-c">/* ------------ */</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC20"> 
+</div><div class="line" id="file-arduino-yun-light-ino-LC21"><span class="pl-c">/* Server settings */</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC22">byte server[] = { <span class="pl-c1">178</span>, <span class="pl-c1">62</span>, <span class="pl-c1">108</span>, <span class="pl-c1">47</span> }; <span class="pl-c">// MQTT server address</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC23"> 
+</div><div class="line" id="file-arduino-yun-light-ino-LC24"><span class="pl-c">/* Sample payload published to lelylan */</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC25"><span class="pl-c">/* The id is the status property id of the basic light /*</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC26"><span class="pl-c">/* http://lelylan.github.io/types-dashboard-ng/#/types/518be107ef539711af000001/ */</span> 
+</div><div class="line" id="file-arduino-yun-light-ino-LC27"><span class="pl-st">char</span>* payloadOn  = <span class="pl-s1"><span class="pl-pds">"</span>{<span class="pl-cce">\"</span>properties<span class="pl-cce">\"</span>:[{<span class="pl-cce">\"</span>id<span class="pl-cce">\"</span>:<span class="pl-cce">\"</span>518be5a700045e1521000001<span class="pl-cce">\"</span>,<span class="pl-cce">\"</span>value<span class="pl-cce">\"</span>:<span class="pl-cce">\"</span>on<span class="pl-cce">\"</span>}]}<span class="pl-pds">"</span></span>;
+</div><div class="line" id="file-arduino-yun-light-ino-LC28"><span class="pl-st">char</span>* payloadOff = <span class="pl-s1"><span class="pl-pds">"</span>{<span class="pl-cce">\"</span>properties<span class="pl-cce">\"</span>:[{<span class="pl-cce">\"</span>id<span class="pl-cce">\"</span>:<span class="pl-cce">\"</span>518be5a700045e1521000001<span class="pl-cce">\"</span>,<span class="pl-cce">\"</span>value<span class="pl-cce">\"</span>:<span class="pl-cce">\"</span>off<span class="pl-cce">\"</span>}]}<span class="pl-pds">"</span></span>;
+</div><div class="line" id="file-arduino-yun-light-ino-LC29">&nbsp;
+</div><div class="line" id="file-arduino-yun-light-ino-LC30"><span class="pl-c">/* Yun configuration */</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC31">byte mac[] = { 0xA0, 0xA0, 0xBA, 0xAC, 0xAE, 0x12 };
+</div><div class="line" id="file-arduino-yun-light-ino-LC32">YunClient yun;
+</div><div class="line" id="file-arduino-yun-light-ino-LC33">&nbsp;
+</div><div class="line" id="file-arduino-yun-light-ino-LC34"><span class="pl-c">/* MQTT communication */</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC35"><span class="pl-st">void</span> <span class="pl-en">callback</span>(<span class="pl-st">char</span>* topic, byte* payload, <span class="pl-st">unsigned</span> <span class="pl-st">int</span> length); <span class="pl-c">// subscription callback</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC36">PubSubClient <span class="pl-en">client</span>(server, <span class="pl-c1">1883</span>, callback, yun);         <span class="pl-c">// mqtt client</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC37">&nbsp;
+</div><div class="line" id="file-arduino-yun-light-ino-LC38"><span class="pl-c">/* Pins configuration */</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC39"><span class="pl-st">int</span> inPin = <span class="pl-c1">3</span>; <span class="pl-c">// button</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC40"><span class="pl-st">int</span> outPin = <span class="pl-c1">13</span>; <span class="pl-c">// led</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC41">&nbsp;
+</div><div class="line" id="file-arduino-yun-light-ino-LC42"><span class="pl-c">/* Button and led logics */</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC43"><span class="pl-st">int</span> state = HIGH;     <span class="pl-c">// current state of the output pin</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC44"><span class="pl-st">int</span> reading;          <span class="pl-c">// current reading from the input pin</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC45"><span class="pl-st">int</span> previous = LOW;   <span class="pl-c">// previous reading from the input pin</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC46"><span class="pl-st">long</span> time = <span class="pl-c1">0</span>;        <span class="pl-c">// the last time the output pin was toggled</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC47"><span class="pl-st">long</span> debounce = <span class="pl-c1">200</span>;  <span class="pl-c">// the debounce time, increase if the output flickers</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC48">&nbsp;
+</div><div class="line" id="file-arduino-yun-light-ino-LC49"><span class="pl-c">/* arduino setup */</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC50"><span class="pl-st">void</span> <span class="pl-en">setup</span>() {
+</div><div class="line" id="file-arduino-yun-light-ino-LC51">  Serial.<span class="pl-s3">begin</span>(<span class="pl-c1">9600</span>);
+</div><div class="line" id="file-arduino-yun-light-ino-LC52">  <span class="pl-s3">delay</span>(<span class="pl-c1">500</span>);
+</div><div class="line" id="file-arduino-yun-light-ino-LC53">&nbsp;
+</div><div class="line" id="file-arduino-yun-light-ino-LC54">  Serial.<span class="pl-s3">println</span>(<span class="pl-s1"><span class="pl-pds">"</span>Start initialization of Yun...<span class="pl-pds">"</span></span>);
+</div><div class="line" id="file-arduino-yun-light-ino-LC55">  Bridge.<span class="pl-s3">begin</span>();
+</div><div class="line" id="file-arduino-yun-light-ino-LC56">  Serial.<span class="pl-s3">println</span>(<span class="pl-s1"><span class="pl-pds">"</span>Bridge finished setup<span class="pl-pds">"</span></span>);
+</div><div class="line" id="file-arduino-yun-light-ino-LC57">  Serial.<span class="pl-s3">println</span>(<span class="pl-s1"><span class="pl-pds">"</span>Starting connection to lelylan...<span class="pl-pds">"</span></span>);
+</div><div class="line" id="file-arduino-yun-light-ino-LC58">&nbsp;
+</div><div class="line" id="file-arduino-yun-light-ino-LC59">  <span class="pl-s3">lelylanConnection</span>();      <span class="pl-c">// MQTT server connection</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC60">  <span class="pl-s3">pinMode</span>(inPin, INPUT);    <span class="pl-c">// button pin setup</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC61">  <span class="pl-s3">pinMode</span>(outPin, OUTPUT);  <span class="pl-c">// led pin setup</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC62">}
+</div><div class="line" id="file-arduino-yun-light-ino-LC63">&nbsp;
+</div><div class="line" id="file-arduino-yun-light-ino-LC64"><span class="pl-c">/* arduino loop */</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC65"><span class="pl-st">void</span> <span class="pl-en">loop</span>() {
+</div><div class="line" id="file-arduino-yun-light-ino-LC66">  <span class="pl-s3">lelylanConnection</span>();
+</div><div class="line" id="file-arduino-yun-light-ino-LC67">&nbsp;
+</div><div class="line" id="file-arduino-yun-light-ino-LC68">  <span class="pl-st">char</span>* value;
+</div><div class="line" id="file-arduino-yun-light-ino-LC69">  reading = <span class="pl-s3">digitalRead</span>(inPin);  <span class="pl-c">// read the button state</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC70">&nbsp;
+</div><div class="line" id="file-arduino-yun-light-ino-LC71">  <span class="pl-c">// if the input just went from LOW and HIGH and we've waited long enough to ignore</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC72">  <span class="pl-c">// any noise on the circuit, toggle the output pin and remember the time</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC73">  <span class="pl-k">if</span> (reading == HIGH &amp;&amp; previous == LOW &amp;&amp; <span class="pl-s3">millis</span>() - <span class="pl-s3">time</span> &gt; debounce) {
+</div><div class="line" id="file-arduino-yun-light-ino-LC74">    <span class="pl-k">if</span> (state == LOW) {
+</div><div class="line" id="file-arduino-yun-light-ino-LC75">      Serial.<span class="pl-s3">println</span>(<span class="pl-s1"><span class="pl-pds">"</span>[PHYSICAL] Led turned on<span class="pl-pds">"</span></span>);
+</div><div class="line" id="file-arduino-yun-light-ino-LC76">      <span class="pl-s3">lelylanPublish</span>(<span class="pl-s1"><span class="pl-pds">"</span>on<span class="pl-pds">"</span></span>);
+</div><div class="line" id="file-arduino-yun-light-ino-LC77">      state = HIGH;
+</div><div class="line" id="file-arduino-yun-light-ino-LC78">    } <span class="pl-k">else</span> {
+</div><div class="line" id="file-arduino-yun-light-ino-LC79">      Serial.<span class="pl-s3">println</span>(<span class="pl-s1"><span class="pl-pds">"</span>[PHYSICAL] Led turned off<span class="pl-pds">"</span></span>);
+</div><div class="line" id="file-arduino-yun-light-ino-LC80">      <span class="pl-s3">lelylanPublish</span>(<span class="pl-s1"><span class="pl-pds">"</span>off<span class="pl-pds">"</span></span>);
+</div><div class="line" id="file-arduino-yun-light-ino-LC81">      state = LOW;
+</div><div class="line" id="file-arduino-yun-light-ino-LC82">    }
+</div><div class="line" id="file-arduino-yun-light-ino-LC83">&nbsp;
+</div><div class="line" id="file-arduino-yun-light-ino-LC84">    <span class="pl-s3">time</span> = <span class="pl-s3">millis</span>();
+</div><div class="line" id="file-arduino-yun-light-ino-LC85">  }
+</div><div class="line" id="file-arduino-yun-light-ino-LC86">&nbsp;
+</div><div class="line" id="file-arduino-yun-light-ino-LC87">  <span class="pl-c">// effectively update the light status</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC88">  <span class="pl-s3">digitalWrite</span>(outPin, state);
+</div><div class="line" id="file-arduino-yun-light-ino-LC89">  previous = reading;
+</div><div class="line" id="file-arduino-yun-light-ino-LC90">}
+</div><div class="line" id="file-arduino-yun-light-ino-LC91">&nbsp;
+</div><div class="line" id="file-arduino-yun-light-ino-LC92"><span class="pl-c">/* MQTT server connection */</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC93"><span class="pl-st">void</span> <span class="pl-en">lelylanConnection</span>() {
+</div><div class="line" id="file-arduino-yun-light-ino-LC94">  <span class="pl-c">// add reconnection logics</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC95">  <span class="pl-k">if</span> (!client.<span class="pl-s3">connected</span>()) {
+</div><div class="line" id="file-arduino-yun-light-ino-LC96">    <span class="pl-c">// connection to MQTT server</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC97">    <span class="pl-k">if</span> (client.<span class="pl-s3">connect</span>(clientId, deviceId, deviceSecret)) {
+</div><div class="line" id="file-arduino-yun-light-ino-LC98">      Serial.<span class="pl-s3">println</span>(<span class="pl-s1"><span class="pl-pds">"</span>[PHYSICAL] Successfully connected with MQTT<span class="pl-pds">"</span></span>);
+</div><div class="line" id="file-arduino-yun-light-ino-LC99">      <span class="pl-s3">lelylanSubscribe</span>(); <span class="pl-c">// topic subscription</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC100">    }
+</div><div class="line" id="file-arduino-yun-light-ino-LC101">  }
+</div><div class="line" id="file-arduino-yun-light-ino-LC102">  client.<span class="pl-s3">loop</span>();
+</div><div class="line" id="file-arduino-yun-light-ino-LC103">}
+</div><div class="line" id="file-arduino-yun-light-ino-LC104">&nbsp;
+</div><div class="line" id="file-arduino-yun-light-ino-LC105"><span class="pl-c">/* MQTT publish */</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC106"><span class="pl-st">void</span> <span class="pl-en">lelylanPublish</span>(<span class="pl-st">char</span>* value) {
+</div><div class="line" id="file-arduino-yun-light-ino-LC107">  <span class="pl-k">if</span> (value == <span class="pl-s1"><span class="pl-pds">"</span>on<span class="pl-pds">"</span></span>)
+</div><div class="line" id="file-arduino-yun-light-ino-LC108">    client.<span class="pl-s3">publish</span>(outTopic, payloadOn); <span class="pl-c">// light on</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC109">  <span class="pl-k">else</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC110">    client.<span class="pl-s3">publish</span>(outTopic, payloadOff); <span class="pl-c">// light off</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC111">}
+</div><div class="line" id="file-arduino-yun-light-ino-LC112">&nbsp;
+</div><div class="line" id="file-arduino-yun-light-ino-LC113"><span class="pl-c">/* MQTT subscribe */</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC114"><span class="pl-st">void</span> <span class="pl-en">lelylanSubscribe</span>() {
+</div><div class="line" id="file-arduino-yun-light-ino-LC115">  client.<span class="pl-s3">subscribe</span>(inTopic);
+</div><div class="line" id="file-arduino-yun-light-ino-LC116">}
+</div><div class="line" id="file-arduino-yun-light-ino-LC117">&nbsp;
+</div><div class="line" id="file-arduino-yun-light-ino-LC118"><span class="pl-c">/* Receive Lelylan message and confirm the physical change */</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC119"><span class="pl-st">void</span> <span class="pl-en">callback</span>(<span class="pl-st">char</span>* topic, byte* payload, <span class="pl-st">unsigned</span> <span class="pl-st">int</span> length) {
+</div><div class="line" id="file-arduino-yun-light-ino-LC120">  <span class="pl-c">// copu the payload content into a char*</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC121">  <span class="pl-st">char</span>* json;
+</div><div class="line" id="file-arduino-yun-light-ino-LC122">  json = (<span class="pl-st">char</span>*) <span class="pl-s3">malloc</span>(length + <span class="pl-c1">1</span>);
+</div><div class="line" id="file-arduino-yun-light-ino-LC123">  <span class="pl-s3">memcpy</span>(json, payload, length);
+</div><div class="line" id="file-arduino-yun-light-ino-LC124">  json[length] = <span class="pl-s1"><span class="pl-pds">'</span><span class="pl-cce">\0</span><span class="pl-pds">'</span></span>;
+</div><div class="line" id="file-arduino-yun-light-ino-LC125">&nbsp;
+</div><div class="line" id="file-arduino-yun-light-ino-LC126">  <span class="pl-c">// update the physical status and confirm the executed update</span>
+</div><div class="line" id="file-arduino-yun-light-ino-LC127">  <span class="pl-k">if</span> (<span class="pl-s3">String</span>(payloadOn) == <span class="pl-s3">String</span>(json)) {
+</div><div class="line" id="file-arduino-yun-light-ino-LC128">    Serial.<span class="pl-s3">println</span>(<span class="pl-s1"><span class="pl-pds">"</span>[LELYLAN] Led turned on<span class="pl-pds">"</span></span>);
+</div><div class="line" id="file-arduino-yun-light-ino-LC129">    <span class="pl-s3">lelylanPublish</span>(<span class="pl-s1"><span class="pl-pds">"</span>on<span class="pl-pds">"</span></span>);
+</div><div class="line" id="file-arduino-yun-light-ino-LC130">    state = HIGH;
+</div><div class="line" id="file-arduino-yun-light-ino-LC131">  } <span class="pl-k">else</span> {
+</div><div class="line" id="file-arduino-yun-light-ino-LC132">    Serial.<span class="pl-s3">println</span>(<span class="pl-s1"><span class="pl-pds">"</span>[LELYLAN] Led turned off<span class="pl-pds">"</span></span>);
+</div><div class="line" id="file-arduino-yun-light-ino-LC133">    <span class="pl-s3">lelylanPublish</span>(<span class="pl-s1"><span class="pl-pds">"</span>off<span class="pl-pds">"</span></span>);
+</div><div class="line" id="file-arduino-yun-light-ino-LC134">    state = LOW;
+</div><div class="line" id="file-arduino-yun-light-ino-LC135">  }
+</div><div class="line" id="file-arduino-yun-light-ino-LC136">&nbsp;
+</div><div class="line" id="file-arduino-yun-light-ino-LC137">  <span class="pl-s3">digitalWrite</span>(outPin, state);
+</div><div class="line" id="file-arduino-yun-light-ino-LC138">  <span class="pl-s3">free</span>(json);
+</div><div class="line" id="file-arduino-yun-light-ino-LC139">}
+</div></pre>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+
+          </div>
+          <div class="gist-meta">
+            <a href="https://gist.github.com/andreareginato/247d012d4da4f23e52a6/raw/arduino-yun-light.ino" style="float:right">view raw</a>
+            <a href="https://gist.github.com/andreareginato/247d012d4da4f23e52a6#file-arduino-yun-light-ino">arduino-yun-light.ino</a>
+            hosted with ❤ by <a href="https://github.com/">GitHub</a>
+          </div>
+        </div>
+</div>
+
+
+    </div>
+    </section>
+
+
+    <section>
+    <div class="content">
+
+      <h1 id="done">You are done</h1>
+
+      <p>
+      Access <a href="http://lelylan.github.io/devices-dashboard-ng">Lelylan Dashboard</a>
+      and control your connected light from mobile, tablet and desktop. If any problem occours,
+      let <a href="http://twitter.com/lelylan">@lelylan</a> know.
+      </p>
+
+      <a href="http://lelylan.github.io/devices-dashboard-ng">
+        <img src="./Create your own smart light using Arduino Yun_files/step-5.png" class="bordered">
+      </a>
+
+    </div>
+    </section>
+
+
+    <section>
+    <div class="content">
+
+      <h1 id="code-explained">Code Explained</h1>
+
+      <p>
+      To better understand how the Arduino sketch works, follows a brief description of what
+      most important sections do.
+      </p>
+
+
+      <h3>Device Settings</h3>
+
+      <p>
+        The <code>deviceId</code> and <code>deviceSecret</code> are used to authenticate
+        the physical object (Arduino) with Lelylan. To get the device credentials open the
+        <a href="http://lelylan.github.io/devices-dashboard-ng">Dashboard</a>, select the
+        desired device, click on settings and copy the Device ID and the Device Secret.
+      </p>
+
+      <script src="./Create your own smart light using Arduino Yun_files/a2bece694cf5c003f3ba.js"></script><link rel="stylesheet" href="https://gist-assets.github.com/assets/embed-8bf0013c72fb64f0bb1bc1872b43e39e.css"><div id="gist16638210" class="gist">
+        <div class="gist-file">
+          <div class="gist-data gist-syntax">
+            
+
+
+
+    <div class="file-data">
+      <table cellpadding="0" cellspacing="0" class="lines highlight">
+        <tbody><tr>
+          <td class="line-numbers">
+            <span class="line-number" id="file-device-secret-ino-L1" rel="file-device-secret-ino-L1">1</span>
+            <span class="line-number" id="file-device-secret-ino-L2" rel="file-device-secret-ino-L2">2</span>
+          </td>
+          <td class="line-data">
+            <pre class="line-pre"><div class="line" id="file-device-secret-ino-LC1"><span class="pl-st">char</span>* deviceId     = <span class="pl-s1"><span class="pl-pds">"</span>&lt;DEVICE-ID&gt;<span class="pl-pds">"</span></span>;      <span class="pl-c">// * set your device id (will be the MQTT client username)</span>
+</div><div class="line" id="file-device-secret-ino-LC2"><span class="pl-st">char</span>* deviceSecret = <span class="pl-s1"><span class="pl-pds">"</span>&lt;DEVICE-SECRET&gt;<span class="pl-pds">"</span></span>;  <span class="pl-c">// * set your device secret (will be the MQTT client password)</span>
+</div></pre>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+
+          </div>
+          <div class="gist-meta">
+            <a href="https://gist.github.com/andreareginato/a2bece694cf5c003f3ba/raw/device-secret.ino" style="float:right">view raw</a>
+            <a href="https://gist.github.com/andreareginato/a2bece694cf5c003f3ba#file-device-secret-ino">device-secret.ino</a>
+            hosted with ❤ by <a href="https://github.com/">GitHub</a>
+          </div>
+        </div>
+</div>
+
+
+      <p>
+        Lelylan uses MQTT, a publish subscribe protocol for the Internet of Things. To make
+        Lelylan communicate with Arduino you need to set two topics: one receiving messages
+        from Lelylan (<code>inTopic</code>) and one sending messages to Lelylan
+        (<code>outTopic</code>). These topics are unique and identified by the device id.
+      </p>
+
+      <script src="./Create your own smart light using Arduino Yun_files/54fca52c1510d25dac5c.js"></script><link rel="stylesheet" href="https://gist-assets.github.com/assets/embed-8bf0013c72fb64f0bb1bc1872b43e39e.css"><div id="gist16638335" class="gist">
+        <div class="gist-file">
+          <div class="gist-data gist-syntax">
+            
+
+
+
+    <div class="file-data">
+      <table cellpadding="0" cellspacing="0" class="lines highlight">
+        <tbody><tr>
+          <td class="line-numbers">
+            <span class="line-number" id="file-device-topic-ino-L1" rel="file-device-topic-ino-L1">1</span>
+            <span class="line-number" id="file-device-topic-ino-L2" rel="file-device-topic-ino-L2">2</span>
+          </td>
+          <td class="line-data">
+            <pre class="line-pre"><div class="line" id="file-device-topic-ino-LC1"><span class="pl-st">char</span>* outTopic = <span class="pl-s1"><span class="pl-pds">"</span>devices/&lt;DEVICE-ID&gt;/set<span class="pl-pds">"</span></span>; <span class="pl-c">// * MQTT channel where physical updates are published</span>
+</div><div class="line" id="file-device-topic-ino-LC2"><span class="pl-st">char</span>* inTopic = <span class="pl-s1"><span class="pl-pds">"</span>devices/&lt;DEVICE-ID&gt;/get<span class="pl-pds">"</span></span>; <span class="pl-c">// * MQTT channel where lelylan updates are received</span>
+</div></pre>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+
+          </div>
+          <div class="gist-meta">
+            <a href="https://gist.github.com/andreareginato/54fca52c1510d25dac5c/raw/device-topic.ino" style="float:right">view raw</a>
+            <a href="https://gist.github.com/andreareginato/54fca52c1510d25dac5c#file-device-topic-ino">device-topic.ino</a>
+            hosted with ❤ by <a href="https://github.com/">GitHub</a>
+          </div>
+        </div>
+</div>
+
+
+      <p>
+      Finally, you need to set the MQTT client id, a random string not longer than 23 bytes.
+      </p>
+
+      <script src="./Create your own smart light using Arduino Yun_files/b8894ef50608f8d7a172.js"></script><link rel="stylesheet" href="https://gist-assets.github.com/assets/embed-8bf0013c72fb64f0bb1bc1872b43e39e.css"><div id="gist16638505" class="gist">
+        <div class="gist-file">
+          <div class="gist-data gist-syntax">
+            
+
+
+
+    <div class="file-data">
+      <table cellpadding="0" cellspacing="0" class="lines highlight">
+        <tbody><tr>
+          <td class="line-numbers">
+            <span class="line-number" id="file-device-client-id-ino-L1" rel="file-device-client-id-ino-L1">1</span>
+          </td>
+          <td class="line-data">
+            <pre class="line-pre"><div class="line" id="file-device-client-id-ino-LC1"><span class="pl-st">char</span>* clientId = <span class="pl-s1"><span class="pl-pds">"</span>&lt;DEVICE-ID&gt;<span class="pl-pds">"</span></span>; <span class="pl-c">// * set as the device id (will be the MQTT client id)</span>
+</div></pre>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+
+          </div>
+          <div class="gist-meta">
+            <a href="https://gist.github.com/andreareginato/b8894ef50608f8d7a172/raw/device-client-id.ino" style="float:right">view raw</a>
+            <a href="https://gist.github.com/andreareginato/b8894ef50608f8d7a172#file-device-client-id-ino">device-client-id.ino</a>
+            hosted with ❤ by <a href="https://github.com/">GitHub</a>
+          </div>
+        </div>
+</div>
+
+
+
+      <h3>JSON Payloads</h3>
+
+      <p>
+        Every message exchanged with Lelylan is made up by a list of properties where each of them
+        contains the property ID and the property value. For the type "basic light" we only have the
+        status property with ID <code>518be5a700045e1521000001</code> accepting the values
+        <code>on</code> and <code>off</code>.
+      </p>
+
+      <div class="notice">
+        <p>
+        To properly generete and parse JSON you can use the
+        <a href="https://github.com/interactive-matter/aJson">aJSON library</a>.
+        We tried too, but had some problems with the memory management.
+        If you make it work let <a href="http://twitter.com/lelylan">@lelylan</a> know.
+        </p>
+      </div>
+
+      <script src="./Create your own smart light using Arduino Yun_files/6c10cc105b948e4e247f.js"></script><link rel="stylesheet" href="https://gist-assets.github.com/assets/embed-8bf0013c72fb64f0bb1bc1872b43e39e.css"><div id="gist16640821" class="gist">
+        <div class="gist-file">
+          <div class="gist-data gist-syntax">
+            
+
+
+
+    <div class="file-data">
+      <table cellpadding="0" cellspacing="0" class="lines highlight">
+        <tbody><tr>
+          <td class="line-numbers">
+            <span class="line-number" id="file-gistfile1-ino-L1" rel="file-gistfile1-ino-L1">1</span>
+            <span class="line-number" id="file-gistfile1-ino-L2" rel="file-gistfile1-ino-L2">2</span>
+            <span class="line-number" id="file-gistfile1-ino-L3" rel="file-gistfile1-ino-L3">3</span>
+          </td>
+          <td class="line-data">
+            <pre class="line-pre"><div class="line" id="file-gistfile1-ino-LC1"><span class="pl-c">/* Sample payloads published to lelylan */</span>
+</div><div class="line" id="file-gistfile1-ino-LC2"><span class="pl-st">char</span>* payloadOn  = <span class="pl-s1"><span class="pl-pds">"</span>{<span class="pl-cce">\"</span>properties<span class="pl-cce">\"</span>:[{<span class="pl-cce">\"</span>id<span class="pl-cce">\"</span>:<span class="pl-cce">\"</span>518be5a700045e1521000001<span class="pl-cce">\"</span>,<span class="pl-cce">\"</span>value<span class="pl-cce">\"</span>:<span class="pl-cce">\"</span>on<span class="pl-cce">\"</span>}]}<span class="pl-pds">"</span></span>;
+</div><div class="line" id="file-gistfile1-ino-LC3"><span class="pl-st">char</span>* payloadOff = <span class="pl-s1"><span class="pl-pds">"</span>{<span class="pl-cce">\"</span>properties<span class="pl-cce">\"</span>:[{<span class="pl-cce">\"</span>id<span class="pl-cce">\"</span>:<span class="pl-cce">\"</span>518be5a700045e1521000001<span class="pl-cce">\"</span>,<span class="pl-cce">\"</span>value<span class="pl-cce">\"</span>:<span class="pl-cce">\"</span>off<span class="pl-cce">\"</span>}]}<span class="pl-pds">"</span></span>;
+</div></pre>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+
+          </div>
+          <div class="gist-meta">
+            <a href="https://gist.github.com/andreareginato/6c10cc105b948e4e247f/raw/gistfile1.ino" style="float:right">view raw</a>
+            <a href="https://gist.github.com/andreareginato/6c10cc105b948e4e247f#file-gistfile1-ino">gistfile1.ino</a>
+            hosted with ❤ by <a href="https://github.com/">GitHub</a>
+          </div>
+        </div>
+</div>
+
+
+      <div class="notice">
+        <p>
+        If you want to know the property IDs of most common types or if you want to create your
+        own types, check out the <a href="http://lelylan.github.io/lab-projects/arduino-yun-light/lelylan.github.io/types-dashboard-ng/">Types Dashboard</a>
+        or check out the <a href="http://dev.lelylan.com/types">Types API</a>.
+        </p>
+      </div>
+
+      <h3>MQTT Signatures</h3>
+
+      <p>
+        To open the communication with Lelylan you need to initialize the MQTT client
+        settings by defining the MQTT server address, the MQTT server port, a callback function (called every
+        time a message is received from Lelylan) and the ethernet client.
+      </p>
+
+      <script src="./Create your own smart light using Arduino Yun_files/54c813d030ef9ff4b220.js"></script><link rel="stylesheet" href="https://gist-assets.github.com/assets/embed-8bf0013c72fb64f0bb1bc1872b43e39e.css"><div id="gist17070315" class="gist">
+        <div class="gist-file">
+          <div class="gist-data gist-syntax">
+            
+
+
+
+    <div class="file-data">
+      <table cellpadding="0" cellspacing="0" class="lines highlight">
+        <tbody><tr>
+          <td class="line-numbers">
+            <span class="line-number" id="file-gistfile1-ino-L1" rel="file-gistfile1-ino-L1">1</span>
+            <span class="line-number" id="file-gistfile1-ino-L2" rel="file-gistfile1-ino-L2">2</span>
+            <span class="line-number" id="file-gistfile1-ino-L3" rel="file-gistfile1-ino-L3">3</span>
+            <span class="line-number" id="file-gistfile1-ino-L4" rel="file-gistfile1-ino-L4">4</span>
+            <span class="line-number" id="file-gistfile1-ino-L5" rel="file-gistfile1-ino-L5">5</span>
+            <span class="line-number" id="file-gistfile1-ino-L6" rel="file-gistfile1-ino-L6">6</span>
+            <span class="line-number" id="file-gistfile1-ino-L7" rel="file-gistfile1-ino-L7">7</span>
+            <span class="line-number" id="file-gistfile1-ino-L8" rel="file-gistfile1-ino-L8">8</span>
+          </td>
+          <td class="line-data">
+            <pre class="line-pre"><div class="line" id="file-gistfile1-ino-LC1"><span class="pl-c">// MQTT server address</span>
+</div><div class="line" id="file-gistfile1-ino-LC2">byte server[] = { <span class="pl-c1">178</span>, <span class="pl-c1">62</span>, <span class="pl-c1">108</span>, <span class="pl-c1">47</span> }; 
+</div><div class="line" id="file-gistfile1-ino-LC3"><span class="pl-c">// Yun definition</span>
+</div><div class="line" id="file-gistfile1-ino-LC4">YunClient yun;
+</div><div class="line" id="file-gistfile1-ino-LC5"><span class="pl-c">// subscription callback</span>
+</div><div class="line" id="file-gistfile1-ino-LC6"><span class="pl-st">void</span> <span class="pl-en">callback</span>(<span class="pl-st">char</span>* topic, byte* payload, <span class="pl-st">unsigned</span> <span class="pl-st">int</span> length); 
+</div><div class="line" id="file-gistfile1-ino-LC7"><span class="pl-c">// mqtt client connection</span>
+</div><div class="line" id="file-gistfile1-ino-LC8">PubSubClient <span class="pl-en">client</span>(server, <span class="pl-c1">1883</span>, callback, yun);         
+</div></pre>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+
+          </div>
+          <div class="gist-meta">
+            <a href="https://gist.github.com/andreareginato/54c813d030ef9ff4b220/raw/gistfile1.ino" style="float:right">view raw</a>
+            <a href="https://gist.github.com/andreareginato/54c813d030ef9ff4b220#file-gistfile1-ino">gistfile1.ino</a>
+            hosted with ❤ by <a href="https://github.com/">GitHub</a>
+          </div>
+        </div>
+</div>
+
+
+      <h3>Led and Button Pins</h3>
+
+      <p>
+        Here we define the pins used to connect the led and the button. If you have
+        followed the <a href="http://lelylan.github.io/lab-projects/arduino-yun-light/#hardware-setup">Fritzing diagram</a> you don't need to
+        change anything. If you use different pins, remember to change these values.
+      </p>
+
+      <script src="./Create your own smart light using Arduino Yun_files/6a017fbfafb92dccd71c.js"></script><link rel="stylesheet" href="https://gist-assets.github.com/assets/embed-8bf0013c72fb64f0bb1bc1872b43e39e.css"><div id="gist17070268" class="gist">
+        <div class="gist-file">
+          <div class="gist-data gist-syntax">
+            
+
+
+
+    <div class="file-data">
+      <table cellpadding="0" cellspacing="0" class="lines highlight">
+        <tbody><tr>
+          <td class="line-numbers">
+            <span class="line-number" id="file-gistfile1-ino-L1" rel="file-gistfile1-ino-L1">1</span>
+            <span class="line-number" id="file-gistfile1-ino-L2" rel="file-gistfile1-ino-L2">2</span>
+            <span class="line-number" id="file-gistfile1-ino-L3" rel="file-gistfile1-ino-L3">3</span>
+          </td>
+          <td class="line-data">
+            <pre class="line-pre"><div class="line" id="file-gistfile1-ino-LC1"><span class="pl-c">/* Pins configuration */</span>
+</div><div class="line" id="file-gistfile1-ino-LC2"><span class="pl-st">int</span> inPin = <span class="pl-c1">3</span>; <span class="pl-c">// button</span>
+</div><div class="line" id="file-gistfile1-ino-LC3"><span class="pl-st">int</span> outPin = <span class="pl-c1">13</span>; <span class="pl-c">// led</span>
+</div></pre>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+
+          </div>
+          <div class="gist-meta">
+            <a href="https://gist.github.com/andreareginato/6a017fbfafb92dccd71c/raw/gistfile1.ino" style="float:right">view raw</a>
+            <a href="https://gist.github.com/andreareginato/6a017fbfafb92dccd71c#file-gistfile1-ino">gistfile1.ino</a>
+            hosted with ❤ by <a href="https://github.com/">GitHub</a>
+          </div>
+        </div>
+</div>
+
+
+      <h3>Led and Button Logics</h3>
+
+      <p>
+        Here we define the variables you need to make the button work correctly. If you are
+        new to push buttons check out this
+        <a href="http://www.arduino.cc/en/Tutorial/Switch">switch tutorial</a>.
+      </p>
+
+      <script src="./Create your own smart light using Arduino Yun_files/97c3f138c25a1fa8bc58.js"></script><link rel="stylesheet" href="https://gist-assets.github.com/assets/embed-8bf0013c72fb64f0bb1bc1872b43e39e.css"><div id="gist16641578" class="gist">
+        <div class="gist-file">
+          <div class="gist-data gist-syntax">
+            
+
+
+
+    <div class="file-data">
+      <table cellpadding="0" cellspacing="0" class="lines highlight">
+        <tbody><tr>
+          <td class="line-numbers">
+            <span class="line-number" id="file-gistfile1-ino-L1" rel="file-gistfile1-ino-L1">1</span>
+            <span class="line-number" id="file-gistfile1-ino-L2" rel="file-gistfile1-ino-L2">2</span>
+            <span class="line-number" id="file-gistfile1-ino-L3" rel="file-gistfile1-ino-L3">3</span>
+            <span class="line-number" id="file-gistfile1-ino-L4" rel="file-gistfile1-ino-L4">4</span>
+            <span class="line-number" id="file-gistfile1-ino-L5" rel="file-gistfile1-ino-L5">5</span>
+          </td>
+          <td class="line-data">
+            <pre class="line-pre"><div class="line" id="file-gistfile1-ino-LC1"><span class="pl-st">int</span> state = HIGH;     <span class="pl-c">// current state of the output pin</span>
+</div><div class="line" id="file-gistfile1-ino-LC2"><span class="pl-st">int</span> reading;          <span class="pl-c">// current reading from the input pin</span>
+</div><div class="line" id="file-gistfile1-ino-LC3"><span class="pl-st">int</span> previous = LOW;   <span class="pl-c">// previous reading from the input pin</span>
+</div><div class="line" id="file-gistfile1-ino-LC4"><span class="pl-st">long</span> time = <span class="pl-c1">0</span>;        <span class="pl-c">// the last time the output pin was toggled</span>
+</div><div class="line" id="file-gistfile1-ino-LC5"><span class="pl-st">long</span> debounce = <span class="pl-c1">200</span>;  <span class="pl-c">// the debounce time, increase if the output flickers</span>
+</div></pre>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+
+          </div>
+          <div class="gist-meta">
+            <a href="https://gist.github.com/andreareginato/97c3f138c25a1fa8bc58/raw/gistfile1.ino" style="float:right">view raw</a>
+            <a href="https://gist.github.com/andreareginato/97c3f138c25a1fa8bc58#file-gistfile1-ino">gistfile1.ino</a>
+            hosted with ❤ by <a href="https://github.com/">GitHub</a>
+          </div>
+        </div>
+</div>
+
+
+      <h3>Arduino Setup</h3>
+
+      <p>
+        Here we define the setup function where Arduino connects to the Internet using DHCP.
+        When the connection is made, Arduino open the connection with the Lelylan MQTT server,
+        and set the led and button pin mode.
+      </p>
+
+      <script src="./Create your own smart light using Arduino Yun_files/4f70d0495eee43e62f60.js"></script><link rel="stylesheet" href="https://gist-assets.github.com/assets/embed-8bf0013c72fb64f0bb1bc1872b43e39e.css"><div id="gist17070286" class="gist">
+        <div class="gist-file">
+          <div class="gist-data gist-syntax">
+            
+
+
+
+    <div class="file-data">
+      <table cellpadding="0" cellspacing="0" class="lines highlight">
+        <tbody><tr>
+          <td class="line-numbers">
+            <span class="line-number" id="file-gistfile1-ino-L1" rel="file-gistfile1-ino-L1">1</span>
+            <span class="line-number" id="file-gistfile1-ino-L2" rel="file-gistfile1-ino-L2">2</span>
+            <span class="line-number" id="file-gistfile1-ino-L3" rel="file-gistfile1-ino-L3">3</span>
+            <span class="line-number" id="file-gistfile1-ino-L4" rel="file-gistfile1-ino-L4">4</span>
+            <span class="line-number" id="file-gistfile1-ino-L5" rel="file-gistfile1-ino-L5">5</span>
+            <span class="line-number" id="file-gistfile1-ino-L6" rel="file-gistfile1-ino-L6">6</span>
+            <span class="line-number" id="file-gistfile1-ino-L7" rel="file-gistfile1-ino-L7">7</span>
+            <span class="line-number" id="file-gistfile1-ino-L8" rel="file-gistfile1-ino-L8">8</span>
+            <span class="line-number" id="file-gistfile1-ino-L9" rel="file-gistfile1-ino-L9">9</span>
+            <span class="line-number" id="file-gistfile1-ino-L10" rel="file-gistfile1-ino-L10">10</span>
+            <span class="line-number" id="file-gistfile1-ino-L11" rel="file-gistfile1-ino-L11">11</span>
+          </td>
+          <td class="line-data">
+            <pre class="line-pre"><div class="line" id="file-gistfile1-ino-LC1"><span class="pl-c">/* arduino setup */</span>
+</div><div class="line" id="file-gistfile1-ino-LC2"><span class="pl-st">void</span> <span class="pl-en">setup</span>() {
+</div><div class="line" id="file-gistfile1-ino-LC3">  Serial.<span class="pl-s3">begin</span>(<span class="pl-c1">9600</span>);
+</div><div class="line" id="file-gistfile1-ino-LC4">  <span class="pl-s3">delay</span>(<span class="pl-c1">500</span>);
+</div><div class="line" id="file-gistfile1-ino-LC5">  Serial.<span class="pl-s3">println</span>(<span class="pl-s1"><span class="pl-pds">"</span>Start initialization of Yun...<span class="pl-pds">"</span></span>);
+</div><div class="line" id="file-gistfile1-ino-LC6">  Bridge.<span class="pl-s3">begin</span>();
+</div><div class="line" id="file-gistfile1-ino-LC7">  Serial.<span class="pl-s3">println</span>(<span class="pl-s1"><span class="pl-pds">"</span>Starting connection to lelylan...<span class="pl-pds">"</span></span>);
+</div><div class="line" id="file-gistfile1-ino-LC8">  <span class="pl-s3">lelylanConnection</span>();      <span class="pl-c">// MQTT server connection</span>
+</div><div class="line" id="file-gistfile1-ino-LC9">  <span class="pl-s3">pinMode</span>(inPin, INPUT);    <span class="pl-c">// button pin setup</span>
+</div><div class="line" id="file-gistfile1-ino-LC10">  <span class="pl-s3">pinMode</span>(outPin, OUTPUT);  <span class="pl-c">// led pin setup</span>
+</div><div class="line" id="file-gistfile1-ino-LC11">}
+</div></pre>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+
+          </div>
+          <div class="gist-meta">
+            <a href="https://gist.github.com/andreareginato/4f70d0495eee43e62f60/raw/gistfile1.ino" style="float:right">view raw</a>
+            <a href="https://gist.github.com/andreareginato/4f70d0495eee43e62f60#file-gistfile1-ino">gistfile1.ino</a>
+            hosted with ❤ by <a href="https://github.com/">GitHub</a>
+          </div>
+        </div>
+</div>
+
+
+      <p>
+      During the MQTT connection phase the client set the <code>deviceId</code>
+      as username and the <code>deviceSecret</code> as password. If the credentials
+      are missing or not valid, the connection will be rejected.
+      </p>
+
+      <script src="./Create your own smart light using Arduino Yun_files/df4ab00320e3e9bcd4ab.js"></script><link rel="stylesheet" href="https://gist-assets.github.com/assets/embed-8bf0013c72fb64f0bb1bc1872b43e39e.css"><div id="gist16641655" class="gist">
+        <div class="gist-file">
+          <div class="gist-data gist-syntax">
+            
+
+
+
+    <div class="file-data">
+      <table cellpadding="0" cellspacing="0" class="lines highlight">
+        <tbody><tr>
+          <td class="line-numbers">
+            <span class="line-number" id="file-gistfile1-ino-L1" rel="file-gistfile1-ino-L1">1</span>
+            <span class="line-number" id="file-gistfile1-ino-L2" rel="file-gistfile1-ino-L2">2</span>
+            <span class="line-number" id="file-gistfile1-ino-L3" rel="file-gistfile1-ino-L3">3</span>
+            <span class="line-number" id="file-gistfile1-ino-L4" rel="file-gistfile1-ino-L4">4</span>
+            <span class="line-number" id="file-gistfile1-ino-L5" rel="file-gistfile1-ino-L5">5</span>
+            <span class="line-number" id="file-gistfile1-ino-L6" rel="file-gistfile1-ino-L6">6</span>
+            <span class="line-number" id="file-gistfile1-ino-L7" rel="file-gistfile1-ino-L7">7</span>
+            <span class="line-number" id="file-gistfile1-ino-L8" rel="file-gistfile1-ino-L8">8</span>
+            <span class="line-number" id="file-gistfile1-ino-L9" rel="file-gistfile1-ino-L9">9</span>
+            <span class="line-number" id="file-gistfile1-ino-L10" rel="file-gistfile1-ino-L10">10</span>
+            <span class="line-number" id="file-gistfile1-ino-L11" rel="file-gistfile1-ino-L11">11</span>
+          </td>
+          <td class="line-data">
+            <pre class="line-pre"><div class="line" id="file-gistfile1-ino-LC1"><span class="pl-st">void</span> <span class="pl-en">lelylanConnection</span>() {
+</div><div class="line" id="file-gistfile1-ino-LC2">  <span class="pl-c">// add reconnection logics</span>
+</div><div class="line" id="file-gistfile1-ino-LC3">  <span class="pl-k">if</span> (!client.<span class="pl-s3">connected</span>()) {
+</div><div class="line" id="file-gistfile1-ino-LC4">    <span class="pl-c">// connection to MQTT server</span>
+</div><div class="line" id="file-gistfile1-ino-LC5">    <span class="pl-k">if</span> (client.<span class="pl-s3">connect</span>(clientId, deviceId, deviceSecret)) {
+</div><div class="line" id="file-gistfile1-ino-LC6">      Serial.<span class="pl-s3">println</span>(<span class="pl-s1"><span class="pl-pds">"</span>[PHYSICAL] Successfully connected with MQTT<span class="pl-pds">"</span></span>);
+</div><div class="line" id="file-gistfile1-ino-LC7">      <span class="pl-s3">lelylanSubscribe</span>(); <span class="pl-c">// topic subscription</span>
+</div><div class="line" id="file-gistfile1-ino-LC8">    }
+</div><div class="line" id="file-gistfile1-ino-LC9">  }
+</div><div class="line" id="file-gistfile1-ino-LC10">  client.<span class="pl-s3">loop</span>();
+</div><div class="line" id="file-gistfile1-ino-LC11">}
+</div></pre>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+
+          </div>
+          <div class="gist-meta">
+            <a href="https://gist.github.com/andreareginato/df4ab00320e3e9bcd4ab/raw/gistfile1.ino" style="float:right">view raw</a>
+            <a href="https://gist.github.com/andreareginato/df4ab00320e3e9bcd4ab#file-gistfile1-ino">gistfile1.ino</a>
+            hosted with ❤ by <a href="https://github.com/">GitHub</a>
+          </div>
+        </div>
+</div>
+
+
+      <p>
+        To keep the connection alive after temporary loss of internet connection we
+        check if the client is connected. When not, Arduino reconnects to Lelylan MQTT server.
+        This is why the <code>lelylanConnection</code> method is also defined into the loop
+        function (see below).
+      </p>
+
+      <h3>Arduino Loop</h3>
+
+      <p>
+      Here we define the loop function where we use a pushbutton as a switch. Each time
+      you press the button the led is turned on or off. To make it work we need to add a
+      <a href="http://arduino.cc/en/Tutorial/Debounce">debounce</a>, otherwise everytime
+      you press the button a single press would be recognized as multiple press.
+      </p>
+
+      <p>
+      Once the push button is pressed (the led status changes) we publish a message to
+      Lelylan with the updated led status.
+      </p>
+
+      <script src="./Create your own smart light using Arduino Yun_files/26452424c12019f45865.js"></script><link rel="stylesheet" href="https://gist-assets.github.com/assets/embed-8bf0013c72fb64f0bb1bc1872b43e39e.css"><div id="gist16641640" class="gist">
+        <div class="gist-file">
+          <div class="gist-data gist-syntax">
+            
+
+
+
+    <div class="file-data">
+      <table cellpadding="0" cellspacing="0" class="lines highlight">
+        <tbody><tr>
+          <td class="line-numbers">
+            <span class="line-number" id="file-gistfile1-ino-L1" rel="file-gistfile1-ino-L1">1</span>
+            <span class="line-number" id="file-gistfile1-ino-L2" rel="file-gistfile1-ino-L2">2</span>
+            <span class="line-number" id="file-gistfile1-ino-L3" rel="file-gistfile1-ino-L3">3</span>
+            <span class="line-number" id="file-gistfile1-ino-L4" rel="file-gistfile1-ino-L4">4</span>
+            <span class="line-number" id="file-gistfile1-ino-L5" rel="file-gistfile1-ino-L5">5</span>
+            <span class="line-number" id="file-gistfile1-ino-L6" rel="file-gistfile1-ino-L6">6</span>
+            <span class="line-number" id="file-gistfile1-ino-L7" rel="file-gistfile1-ino-L7">7</span>
+            <span class="line-number" id="file-gistfile1-ino-L8" rel="file-gistfile1-ino-L8">8</span>
+            <span class="line-number" id="file-gistfile1-ino-L9" rel="file-gistfile1-ino-L9">9</span>
+            <span class="line-number" id="file-gistfile1-ino-L10" rel="file-gistfile1-ino-L10">10</span>
+            <span class="line-number" id="file-gistfile1-ino-L11" rel="file-gistfile1-ino-L11">11</span>
+            <span class="line-number" id="file-gistfile1-ino-L12" rel="file-gistfile1-ino-L12">12</span>
+            <span class="line-number" id="file-gistfile1-ino-L13" rel="file-gistfile1-ino-L13">13</span>
+            <span class="line-number" id="file-gistfile1-ino-L14" rel="file-gistfile1-ino-L14">14</span>
+            <span class="line-number" id="file-gistfile1-ino-L15" rel="file-gistfile1-ino-L15">15</span>
+            <span class="line-number" id="file-gistfile1-ino-L16" rel="file-gistfile1-ino-L16">16</span>
+            <span class="line-number" id="file-gistfile1-ino-L17" rel="file-gistfile1-ino-L17">17</span>
+            <span class="line-number" id="file-gistfile1-ino-L18" rel="file-gistfile1-ino-L18">18</span>
+            <span class="line-number" id="file-gistfile1-ino-L19" rel="file-gistfile1-ino-L19">19</span>
+            <span class="line-number" id="file-gistfile1-ino-L20" rel="file-gistfile1-ino-L20">20</span>
+            <span class="line-number" id="file-gistfile1-ino-L21" rel="file-gistfile1-ino-L21">21</span>
+            <span class="line-number" id="file-gistfile1-ino-L22" rel="file-gistfile1-ino-L22">22</span>
+            <span class="line-number" id="file-gistfile1-ino-L23" rel="file-gistfile1-ino-L23">23</span>
+          </td>
+          <td class="line-data">
+            <pre class="line-pre"><div class="line" id="file-gistfile1-ino-LC1"><span class="pl-st">void</span> <span class="pl-en">loop</span>() {
+</div><div class="line" id="file-gistfile1-ino-LC2">  <span class="pl-s3">lelylanConnection</span>();
+</div><div class="line" id="file-gistfile1-ino-LC3"> 
+</div><div class="line" id="file-gistfile1-ino-LC4">  <span class="pl-st">char</span>* value;
+</div><div class="line" id="file-gistfile1-ino-LC5">  reading = <span class="pl-s3">digitalRead</span>(inPin);  <span class="pl-c">// read the button state</span>
+</div><div class="line" id="file-gistfile1-ino-LC6"> 
+</div><div class="line" id="file-gistfile1-ino-LC7">  <span class="pl-c">// if the input just went from LOW and HIGH and we've waited long enough to ignore any noise on the circuit, toggle the output pin and remember the time</span>
+</div><div class="line" id="file-gistfile1-ino-LC8">  <span class="pl-k">if</span> (reading == HIGH &amp;&amp; previous == LOW &amp;&amp; <span class="pl-s3">millis</span>() - <span class="pl-s3">time</span> &gt; debounce) {
+</div><div class="line" id="file-gistfile1-ino-LC9">    <span class="pl-k">if</span> (state == LOW) {
+</div><div class="line" id="file-gistfile1-ino-LC10">      Serial.<span class="pl-s3">println</span>(<span class="pl-s1"><span class="pl-pds">"</span>[PHYSICAL] Led turned on<span class="pl-pds">"</span></span>);
+</div><div class="line" id="file-gistfile1-ino-LC11">      <span class="pl-s3">lelylanPublish</span>(<span class="pl-s1"><span class="pl-pds">"</span>on<span class="pl-pds">"</span></span>);
+</div><div class="line" id="file-gistfile1-ino-LC12">      state = HIGH;
+</div><div class="line" id="file-gistfile1-ino-LC13">    } <span class="pl-k">else</span> {
+</div><div class="line" id="file-gistfile1-ino-LC14">      Serial.<span class="pl-s3">println</span>(<span class="pl-s1"><span class="pl-pds">"</span>[PHYSICAL] Led turned off<span class="pl-pds">"</span></span>);
+</div><div class="line" id="file-gistfile1-ino-LC15">      <span class="pl-s3">lelylanPublish</span>(<span class="pl-s1"><span class="pl-pds">"</span>off<span class="pl-pds">"</span></span>);
+</div><div class="line" id="file-gistfile1-ino-LC16">      state = LOW;
+</div><div class="line" id="file-gistfile1-ino-LC17">    }
+</div><div class="line" id="file-gistfile1-ino-LC18">    <span class="pl-s3">time</span> = <span class="pl-s3">millis</span>();
+</div><div class="line" id="file-gistfile1-ino-LC19">  }
+</div><div class="line" id="file-gistfile1-ino-LC20"> 
+</div><div class="line" id="file-gistfile1-ino-LC21">  <span class="pl-s3">digitalWrite</span>(outPin, state);
+</div><div class="line" id="file-gistfile1-ino-LC22">  previous = reading;
+</div><div class="line" id="file-gistfile1-ino-LC23">}
+</div></pre>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+
+          </div>
+          <div class="gist-meta">
+            <a href="https://gist.github.com/andreareginato/26452424c12019f45865/raw/gistfile1.ino" style="float:right">view raw</a>
+            <a href="https://gist.github.com/andreareginato/26452424c12019f45865#file-gistfile1-ino">gistfile1.ino</a>
+            hosted with ❤ by <a href="https://github.com/">GitHub</a>
+          </div>
+        </div>
+</div>
+
+
+      <h3>Publish Messages to Lelylan</h3>
+
+      <p>
+        To let Lelylan know when the led is turned on or off, you need to publish a message
+        to the MQTT out topic with the updated properties.
+      </p>
+
+      <script src="./Create your own smart light using Arduino Yun_files/cef12ebedef4c4d5450d.js"></script><link rel="stylesheet" href="https://gist-assets.github.com/assets/embed-8bf0013c72fb64f0bb1bc1872b43e39e.css"><div id="gist16641686" class="gist">
+        <div class="gist-file">
+          <div class="gist-data gist-syntax">
+            
+
+
+
+    <div class="file-data">
+      <table cellpadding="0" cellspacing="0" class="lines highlight">
+        <tbody><tr>
+          <td class="line-numbers">
+            <span class="line-number" id="file-gistfile1-ino-L1" rel="file-gistfile1-ino-L1">1</span>
+            <span class="line-number" id="file-gistfile1-ino-L2" rel="file-gistfile1-ino-L2">2</span>
+            <span class="line-number" id="file-gistfile1-ino-L3" rel="file-gistfile1-ino-L3">3</span>
+            <span class="line-number" id="file-gistfile1-ino-L4" rel="file-gistfile1-ino-L4">4</span>
+            <span class="line-number" id="file-gistfile1-ino-L5" rel="file-gistfile1-ino-L5">5</span>
+            <span class="line-number" id="file-gistfile1-ino-L6" rel="file-gistfile1-ino-L6">6</span>
+          </td>
+          <td class="line-data">
+            <pre class="line-pre"><div class="line" id="file-gistfile1-ino-LC1"><span class="pl-st">void</span> <span class="pl-en">lelylanPublish</span>(<span class="pl-st">char</span>* value) {
+</div><div class="line" id="file-gistfile1-ino-LC2">  <span class="pl-k">if</span> (value == <span class="pl-s1"><span class="pl-pds">"</span>on<span class="pl-pds">"</span></span>)
+</div><div class="line" id="file-gistfile1-ino-LC3">    client.<span class="pl-s3">publish</span>(outTopic, payloadOn); <span class="pl-c">// light on</span>
+</div><div class="line" id="file-gistfile1-ino-LC4">  <span class="pl-k">else</span>
+</div><div class="line" id="file-gistfile1-ino-LC5">    client.<span class="pl-s3">publish</span>(outTopic, payloadOff); <span class="pl-c">// light off</span>
+</div><div class="line" id="file-gistfile1-ino-LC6">}
+</div></pre>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+
+          </div>
+          <div class="gist-meta">
+            <a href="https://gist.github.com/andreareginato/cef12ebedef4c4d5450d/raw/gistfile1.ino" style="float:right">view raw</a>
+            <a href="https://gist.github.com/andreareginato/cef12ebedef4c4d5450d#file-gistfile1-ino">gistfile1.ino</a>
+            hosted with ❤ by <a href="https://github.com/">GitHub</a>
+          </div>
+        </div>
+</div>
+
+
+      <h3>Receive Messages from Lelylan</h3>
+
+      <p>
+      When a user updates a device property using Lelylan Dashboard a message is published to
+      the topic <code>devices/&lt;DEVICE-ID&gt;/get</code> (in topic) and it's received from
+      Arduino through the <code>callback</code> function.
+      We check it the received message turns on or off the light and once the led status is updated,
+      a confirmation message must to be sent back to Lelylan to confirm that the physical changes
+      were successfully applied (if not, the device will keep being
+      <a href="http://dev.lelylan.com/support#faq-value-expected-pending">pending</a>).
+      </p>
+
+      <script src="./Create your own smart light using Arduino Yun_files/123f9529c24b9de32fa9.js"></script><link rel="stylesheet" href="https://gist-assets.github.com/assets/embed-8bf0013c72fb64f0bb1bc1872b43e39e.css"><div id="gist16643899" class="gist">
+        <div class="gist-file">
+          <div class="gist-data gist-syntax">
+            
+
+
+
+    <div class="file-data">
+      <table cellpadding="0" cellspacing="0" class="lines highlight">
+        <tbody><tr>
+          <td class="line-numbers">
+            <span class="line-number" id="file-gistfile1-ino-L1" rel="file-gistfile1-ino-L1">1</span>
+            <span class="line-number" id="file-gistfile1-ino-L2" rel="file-gistfile1-ino-L2">2</span>
+            <span class="line-number" id="file-gistfile1-ino-L3" rel="file-gistfile1-ino-L3">3</span>
+            <span class="line-number" id="file-gistfile1-ino-L4" rel="file-gistfile1-ino-L4">4</span>
+            <span class="line-number" id="file-gistfile1-ino-L5" rel="file-gistfile1-ino-L5">5</span>
+            <span class="line-number" id="file-gistfile1-ino-L6" rel="file-gistfile1-ino-L6">6</span>
+            <span class="line-number" id="file-gistfile1-ino-L7" rel="file-gistfile1-ino-L7">7</span>
+            <span class="line-number" id="file-gistfile1-ino-L8" rel="file-gistfile1-ino-L8">8</span>
+            <span class="line-number" id="file-gistfile1-ino-L9" rel="file-gistfile1-ino-L9">9</span>
+            <span class="line-number" id="file-gistfile1-ino-L10" rel="file-gistfile1-ino-L10">10</span>
+            <span class="line-number" id="file-gistfile1-ino-L11" rel="file-gistfile1-ino-L11">11</span>
+            <span class="line-number" id="file-gistfile1-ino-L12" rel="file-gistfile1-ino-L12">12</span>
+            <span class="line-number" id="file-gistfile1-ino-L13" rel="file-gistfile1-ino-L13">13</span>
+            <span class="line-number" id="file-gistfile1-ino-L14" rel="file-gistfile1-ino-L14">14</span>
+            <span class="line-number" id="file-gistfile1-ino-L15" rel="file-gistfile1-ino-L15">15</span>
+            <span class="line-number" id="file-gistfile1-ino-L16" rel="file-gistfile1-ino-L16">16</span>
+            <span class="line-number" id="file-gistfile1-ino-L17" rel="file-gistfile1-ino-L17">17</span>
+            <span class="line-number" id="file-gistfile1-ino-L18" rel="file-gistfile1-ino-L18">18</span>
+            <span class="line-number" id="file-gistfile1-ino-L19" rel="file-gistfile1-ino-L19">19</span>
+            <span class="line-number" id="file-gistfile1-ino-L20" rel="file-gistfile1-ino-L20">20</span>
+            <span class="line-number" id="file-gistfile1-ino-L21" rel="file-gistfile1-ino-L21">21</span>
+            <span class="line-number" id="file-gistfile1-ino-L22" rel="file-gistfile1-ino-L22">22</span>
+          </td>
+          <td class="line-data">
+            <pre class="line-pre"><div class="line" id="file-gistfile1-ino-LC1"><span class="pl-c">/* Receive Lelylan message and confirm the physical change */</span>
+</div><div class="line" id="file-gistfile1-ino-LC2"><span class="pl-st">void</span> <span class="pl-en">callback</span>(<span class="pl-st">char</span>* topic, byte* payload, <span class="pl-st">unsigned</span> <span class="pl-st">int</span> length) {
+</div><div class="line" id="file-gistfile1-ino-LC3">  <span class="pl-c">// copu the payload content into a char*</span>
+</div><div class="line" id="file-gistfile1-ino-LC4">  <span class="pl-st">char</span>* json;
+</div><div class="line" id="file-gistfile1-ino-LC5">  json = (<span class="pl-st">char</span>*) <span class="pl-s3">malloc</span>(length + <span class="pl-c1">1</span>);
+</div><div class="line" id="file-gistfile1-ino-LC6">  <span class="pl-s3">memcpy</span>(json, payload, length);
+</div><div class="line" id="file-gistfile1-ino-LC7">  json[length] = <span class="pl-s1"><span class="pl-pds">'</span><span class="pl-cce">\0</span><span class="pl-pds">'</span></span>;
+</div><div class="line" id="file-gistfile1-ino-LC8"> 
+</div><div class="line" id="file-gistfile1-ino-LC9">  <span class="pl-c">// update the physical status and confirm the executed update</span>
+</div><div class="line" id="file-gistfile1-ino-LC10">  <span class="pl-k">if</span> (<span class="pl-s3">String</span>(payloadOn) == <span class="pl-s3">String</span>(json)) {
+</div><div class="line" id="file-gistfile1-ino-LC11">    Serial.<span class="pl-s3">println</span>(<span class="pl-s1"><span class="pl-pds">"</span>[LELYLAN] Led turned on<span class="pl-pds">"</span></span>);
+</div><div class="line" id="file-gistfile1-ino-LC12">    <span class="pl-s3">lelylanPublish</span>(<span class="pl-s1"><span class="pl-pds">"</span>on<span class="pl-pds">"</span></span>);
+</div><div class="line" id="file-gistfile1-ino-LC13">    state = HIGH;
+</div><div class="line" id="file-gistfile1-ino-LC14">  } <span class="pl-k">else</span> {
+</div><div class="line" id="file-gistfile1-ino-LC15">    Serial.<span class="pl-s3">println</span>(<span class="pl-s1"><span class="pl-pds">"</span>[LELYLAN] Led turned off<span class="pl-pds">"</span></span>);
+</div><div class="line" id="file-gistfile1-ino-LC16">    <span class="pl-s3">lelylanPublish</span>(<span class="pl-s1"><span class="pl-pds">"</span>off<span class="pl-pds">"</span></span>);
+</div><div class="line" id="file-gistfile1-ino-LC17">    state = LOW;
+</div><div class="line" id="file-gistfile1-ino-LC18">  }
+</div><div class="line" id="file-gistfile1-ino-LC19"> 
+</div><div class="line" id="file-gistfile1-ino-LC20">  <span class="pl-s3">digitalWrite</span>(outPin, state);
+</div><div class="line" id="file-gistfile1-ino-LC21">  <span class="pl-s3">free</span>(json);
+</div><div class="line" id="file-gistfile1-ino-LC22">}
+</div></pre>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+
+          </div>
+          <div class="gist-meta">
+            <a href="https://gist.github.com/andreareginato/123f9529c24b9de32fa9/raw/gistfile1.ino" style="float:right">view raw</a>
+            <a href="https://gist.github.com/andreareginato/123f9529c24b9de32fa9#file-gistfile1-ino">gistfile1.ino</a>
+            hosted with ❤ by <a href="https://github.com/">GitHub</a>
+          </div>
+        </div>
+</div>
+
+
+    </div>
+    </section>
+
+    <section>
+    <div class="content">
+
+      <h1 id="troubleshooting">Troubleshooting</h1>
+
+      <p>
+      If any problem occours check out the following points.
+      </p>
+
+      <ul>
+
+        <li>
+        <em>Message Size</em> -
+        Using Lelylan your messages are usually bigger than 128 bytes. For this reason we
+        <a href="https://github.com/andreareginato/pubsubclient">forked</a> the
+        original PubSubClient setting the <a href="http://knolleary.net/client-for-mqtt/api/#configoptions">max packet size</a>
+        to 512 bytes.
+        </li>
+
+        <li>
+        <em>Memory Usage</em> -
+        Arduino doesn't have that much memory. Take care of it and free all variables you have used.
+        If not, your Arduino will restart to get back the needed memory. A nice library to check
+        the memory consumption out is <a href="http://playground.arduino.cc/Code/AvailableMemory">MemoryFree</a>.
+        </li>
+
+      </ul>
+
+    </div>
+    </section>
+
+    <section>
+    <div class="content">
+
+      <h1 id="inspired">Get inspired</h1>
+
+      <p>
+      Did you like this tutorial? You could be interested in the following ones.
+      </p>
+
+      <div ng-app="project-app" class="ng-scope">
+        <div class="ly-project ly-project-item-card ng-isolate-scope" ly-project-id="5457a05d386166000e010000"><div class="ly-project-item-card ly-project-list-item"><a href="http://lelylan.github.io/lab-projects/arduino-ethernet-light/" target="_blank"><img class="ly-project-user-avatar" src="./Create your own smart light using Arduino Yun_files/data"></a><h1 class="ly-project-title"><a href="http://lelylan.github.io/lab-projects/arduino-ethernet-light/" target="_blank" class="ng-binding">Create your own smart light with Arduino Ethernet</a></h1><p class="ly-project-tags"><!-- ngRepeat: tag in project.tags --><a class="ly-project-tag ng-binding ng-scope" ng-repeat="tag in project.tags" href="http://localhost:9000/#projects/hardware" target="_blank">hardware</a><!-- end ngRepeat: tag in project.tags --><a class="ly-project-tag ng-binding ng-scope" ng-repeat="tag in project.tags" href="http://localhost:9000/#projects/arduino" target="_blank">arduino</a><!-- end ngRepeat: tag in project.tags --><a class="ly-project-tag ng-binding ng-scope" ng-repeat="tag in project.tags" href="http://localhost:9000/#projects/mqtt" target="_blank">mqtt</a><!-- end ngRepeat: tag in project.tags --><a class="ly-project-tag ng-binding ng-scope" ng-repeat="tag in project.tags" href="http://localhost:9000/#projects/light" target="_blank">light</a><!-- end ngRepeat: tag in project.tags --><a class="ly-project-tag ng-binding ng-scope" ng-repeat="tag in project.tags" href="http://localhost:9000/#projects/ethernet" target="_blank">ethernet</a><!-- end ngRepeat: tag in project.tags --></p><p class="ly-project-description ng-binding">This tutorial will show you how to control and monitor a simple light by connecting an Arduino Ethernet to Lelylan using MQTT, a pub/sub messaging protocol enabling your Arduino to receive and send messages in a simple and transparent way.</p><p class="ly-project-link"><a href="http://lelylan.github.io/lab-projects/arduino-ethernet-light/" target="_blank">Learn more about this project →</a></p><p class="ly-project-link ly-project-footer" ng-click="embedded=true" ng-show="!embedded"><a class="ly-project-embed"><span>↬</span> embed</a> <a href="http://lelylan.com/" target="_blank">With ♥ lelylan.com</a></p><p class="ly-project-embed-input ly-project-link ly-project-footer ng-hide" ng-show="embedded"><input type="text" ng-model="embed" class="ng-pristine ng-valid"></p></div></div>
+        <div class="ly-project ly-project-item-card ng-isolate-scope" ly-project-id="547d9104316135000e000000"><div class="ly-project-item-card ly-project-list-item"><a href="http://lelylan.github.io/lab-projects/raspberry-pi-light/" target="_blank"><img class="ly-project-user-avatar" src="./Create your own smart light using Arduino Yun_files/data(1)"></a><h1 class="ly-project-title"><a href="http://lelylan.github.io/lab-projects/raspberry-pi-light/" target="_blank" class="ng-binding">Create your own smart light with Raspberry Pi</a></h1><p class="ly-project-tags"><!-- ngRepeat: tag in project.tags --><a class="ly-project-tag ng-binding ng-scope" ng-repeat="tag in project.tags" href="http://localhost:9000/#projects/hardware" target="_blank">hardware</a><!-- end ngRepeat: tag in project.tags --><a class="ly-project-tag ng-binding ng-scope" ng-repeat="tag in project.tags" href="http://localhost:9000/#projects/raspberry" target="_blank">raspberry</a><!-- end ngRepeat: tag in project.tags --><a class="ly-project-tag ng-binding ng-scope" ng-repeat="tag in project.tags" href="http://localhost:9000/#projects/mqtt" target="_blank">mqtt</a><!-- end ngRepeat: tag in project.tags --><a class="ly-project-tag ng-binding ng-scope" ng-repeat="tag in project.tags" href="http://localhost:9000/#projects/light" target="_blank">light</a><!-- end ngRepeat: tag in project.tags --><a class="ly-project-tag ng-binding ng-scope" ng-repeat="tag in project.tags" href="http://localhost:9000/#projects/wifi" target="_blank">wifi</a><!-- end ngRepeat: tag in project.tags --></p><p class="ly-project-description ng-binding">This tutorial will show you how to control and monitor a simple light by connecting a Raspberry Pi to Lelylan using MQTT, a pub/sub messaging protocol enabling your hardware to receive and send messages in a simple and transparent way.</p><p class="ly-project-link"><a href="http://lelylan.github.io/lab-projects/raspberry-pi-light/" target="_blank">Learn more about this project →</a></p><p class="ly-project-link ly-project-footer" ng-click="embedded=true" ng-show="!embedded"><a class="ly-project-embed"><span>↬</span> embed</a> <a href="http://lelylan.com/" target="_blank">With ♥ lelylan.com</a></p><p class="ly-project-embed-input ly-project-link ly-project-footer ng-hide" ng-show="embedded"><input type="text" ng-model="embed" class="ng-pristine ng-valid"></p></div></div>
+        <link rel="stylesheet" href="http://lelylan.github.io/lab-directives-ng/styles/main.css">
+        <script src="./Create your own smart light using Arduino Yun_files/vendor.js"></script>
+        <script src="./Create your own smart light using Arduino Yun_files/scripts.js"></script>
+        <script>angular.module('project-app', ['lelylan-lab.directives.project']);</script>
+      </div>
+
+      <br style="clear:both"><br><br>
+
+      <p>
+      If you want to learn more check out the
+      <a href="http://dev.lelylan.com/">Lelylan Dev Center</a> and
+      <a href="http://lelylan.github.io/lab-ng/#/">Lelylan Lab</a>.
+      </p>
+
+    </div>
+    </section>
+
+    <section>
+    <div class="content">
+      <h1 id="social">Social</h1>
+
+      <p>
+      If you like our work, let us know on <a href="http://twitter.com/lelylan" target="_blank">twitter</a> or by sharing the tutorial with anyone you think might find it useful.
+      </p><p>
+
+      </p><div id="share-buttons">
+      <!-- Facebook -->
+      <a href="http://www.facebook.com/sharer.php?u=http://lelylan.github.io/lab-projects/arduino-yun-light" target="_blank"><img src="./Create your own smart light using Arduino Yun_files/facebook.png" alt="Facebook"></a>
+      <!-- Twitter -->
+      <a href="http://twitter.com/share?url=http://lelylan.github.io/lab-projects/arduino-yun-light&text=Create%20your%20own%20smart%20light%20using%20Arduino%20Yun&hashtags=iot" target="_blank"><img src="./Create your own smart light using Arduino Yun_files/twitter.png" alt="Twitter"></a>
+      <!-- Google+ -->
+      <a href="https://plus.google.com/share?url=http://lelylan.github.io/lab-projects/arduino-yun-light" target="_blank"><img src="./Create your own smart light using Arduino Yun_files/google.png" alt="Google"></a>
+      <!-- Digg -->
+      <a href="http://www.digg.com/submit?url=http://lelylan.github.io/lab-projects/arduino-yun-light" target="_blank"><img src="./Create your own smart light using Arduino Yun_files/diggit.png" alt="Digg"></a>
+      <!-- Reddit -->
+      <a href="http://reddit.com/submit?url=http://lelylan.github.io/lab-projects/arduino-yun-light&title=Create%20your%20own%20smart%20light%20using%20Arduino%20Yun" target="_blank"><img src="./Create your own smart light using Arduino Yun_files/reddit.png" alt="Reddit"></a>
+      <!-- LinkedIn -->
+      <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://lelylan.github.io/lab-projects/arduino-yun-light" target="_blank"><img src="./Create your own smart light using Arduino Yun_files/linkedin.png" alt="LinkedIn"></a>
+      <!-- Pinterest -->
+      <a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());"><img src="./Create your own smart light using Arduino Yun_files/pinterest.png" alt="Pinterest"></a>
+      <!-- StumbleUpon-->
+      <a href="http://www.stumbleupon.com/submit?url=http://lelylan.github.io/lab-projects/arduino-yun-light&title=Create%20your%20smart%20light%20using%20Arduino%20Yun" target="_blank"><img src="./Create your own smart light using Arduino Yun_files/stumbleupon.png" alt="StumbleUpon"></a>
+      <!-- Email -->
+      <a href="mailto:?Subject=Create%20your%20own%20smart%20light%20using%20Arduino%20Yun&Body=I%20saw%20this%20and%20thought%20of%20you!%20%20http://lelylan.github.io/lab-projects/arduino-yun-light"><img src="./Create your own smart light using Arduino Yun_files/email.png" alt="Email"></a>
+      </div>
+    </div>
+    </section>
+
+    <section>
+    <div class="content">
+      <h1 id="thanks">Thanks</h1>
+
+      <p>
+      This article is brought to life from the following people.
+      <a href="mailto:touch@lelylan.com" target="_blank">Mail</a> or
+      <a href="http://twitter.com/lelylan" target="_blank">Tweet</a>
+      us for any idea that can improve the project.
+      </p>
+
+      <a href="https://twitter.com/bugduino"><img src="./Create your own smart light using Arduino Yun_files/bugduino.jpg" class="bordered people"></a>
+      <a href="https://twitter.com/andreareginato"><img src="./Create your own smart light using Arduino Yun_files/reggie.jpg" class="bordered people"></a>
+
+    </div>
+    </section>
+  
+
+</body></html>
