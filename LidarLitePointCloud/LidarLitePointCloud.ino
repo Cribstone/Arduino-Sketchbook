@@ -1,10 +1,12 @@
-# Sweep Lidar Scanner
-#  Lidar Lite sensor sending cm distance while servos sweep
-# Dincer Hepguler 2015
-# http://borsaci06.com
-# Full Tutorial at http://myrobotlab.org/content/lidar-lite-distance-measurement-and-creating-point-cloud
-*/ 
+
+/* Sweep Lidar Scanner
+*  Lidar Lite sensor sending cm distance while servos sweep
+* Dincer Hepguler 2015
+* http://borsaci06.com
+* Full Tutorial at http://myrobotlab.org/content/lidar-lite-distance-measurement-and-creating-point-cloud
+*/
  
+#include <i2cmaster.h>
 #include <Servo.h> 
 #include <I2C.h>
 #define    LIDARLite_ADDRESS   0x62          // Default I2C Address of LIDAR-Lite.
