@@ -33,8 +33,8 @@
 #include "HttpClient.h"
 #include "FastLED.h"
 
-char ssid[] = "Tomato24";      //  your network SSID (name) 
-char pass[] = "roosevelt";   // your network password
+char ssid[] =       //  your network SSID (name) 
+char pass[] =   // your network password
 //int keyIndex = 0;            // your network key Index number (needed only for WEP)
 
 int status = WL_IDLE_STATUS;
