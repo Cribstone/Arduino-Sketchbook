@@ -34,15 +34,14 @@
 const int lamp_pin = 5;
 
 // WiFi parameters
-#define WLAN_SSID       "Tomato24"
-#define WLAN_PASS       "roosevelt"
+#define WLAN_SSID      
+#define WLAN_PASS       
 
 // Adafruit IO
 #define AIO_SERVER      "io.adafruit.com"
 #define AIO_SERVERPORT  1883
-#define AIO_USERNAME    "carfreemaine"
-#define AIO_KEY         "aa40db5f3bbb2ed4a93247da29f5de2968b9268d"
-
+#define AIO_USERNAME    
+#define AIO_KEY         
 // Create an ESP8266 WiFiClient class to connect to the MQTT server.
 WiFiClient client;
 
