@@ -1,4 +1,3 @@
-#include <TinkerKit.h>
 
 #include <Servo.h>
 
@@ -9,6 +8,6 @@ void setup() {
 }
 
 void loop() {
-  oneServo.write(180);
+  oneServo.write(360);
 
 }
