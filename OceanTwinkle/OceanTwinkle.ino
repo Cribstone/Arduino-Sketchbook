@@ -1,3 +1,6 @@
+// Based on "ColorTwinkles.ino" by Mark Kriegsman
+// https://gist.github.com/kriegsman/5408ecd397744ba0393e
+
 #include "FastLED.h"
  
 #define LED_PIN     6
