@@ -2,11 +2,11 @@
 #include <PubSubClient.h>
 
 // Wifi Connection
-const char* ssid = "Tomato24";
-const char* password = "roosevelt";
+const char* ssid = "ssid";
+const char* password = "pass";
 
 // MQTT Server address
-const char* mqtt_server = "192.168.1.9";
+const char* mqtt_server = "192.168.1.1";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -17,8 +17,8 @@ int value = 0;
 void setup() {
   
     // prepare GPIO4
-  pinMode(4, OUTPUT);
-  digitalWrite(4, 1);
+  pinMode(0, OUTPUT);
+  digitalWrite(0, 1);
 
   Serial.begin(9600);
   setup_wifi();
@@ -60,13 +60,13 @@ void callback(char* topic, byte* payload, unsigned int length) {
   if ((char)payload[0] == '1') {
     digitalWrite(BUILTIN_LED, LOW);   // Turn the LED on (Note that LOW is the voltage level
     val = 1;
-    digitalWrite(4, val);
+    digitalWrite(0, val);
     // but actually the LED is on; this is because
     // it is acive low on the ESP-01)
   } else {
     digitalWrite(BUILTIN_LED, HIGH);  // Turn the LED off by making the voltage HIGH
     val = 0;
-    digitalWrite(4, val);
+    digitalWrite(0, val);
   }
 
 }
