@@ -2,11 +2,11 @@
 #include <PubSubClient.h>
 
 // Wifi Connection
-const char* ssid = "YOUR SSID";
-const char* password = "SSID PASSWORD";
+const char* ssid = "ssid";
+const char* password = "pass";
 
 // MQTT Server address
-const char* mqtt_server = "Your MQTT IP Address ";
+const char* mqtt_server = "192.168.1.1";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -17,8 +17,8 @@ int value = 0;
 void setup() {
   
     // prepare GPIO4
-  pinMode(4, OUTPUT);
-  digitalWrite(4, 1);
+  pinMode(0, OUTPUT);
+  digitalWrite(0, 1);
 
   Serial.begin(9600);
   setup_wifi();
@@ -60,13 +60,13 @@ void callback(char* topic, byte* payload, unsigned int length) {
   if ((char)payload[0] == '1') {
     digitalWrite(BUILTIN_LED, LOW);   // Turn the LED on (Note that LOW is the voltage level
     val = 1;
-    digitalWrite(4, val);
+    digitalWrite(0, val);
     // but actually the LED is on; this is because
     // it is acive low on the ESP-01)
   } else {
     digitalWrite(BUILTIN_LED, HIGH);  // Turn the LED off by making the voltage HIGH
     val = 0;
-    digitalWrite(4, val);
+    digitalWrite(0, val);
   }
 
 }
@@ -79,9 +79,9 @@ void reconnect() {
     if (client.connect("ESP8266Client")) {
       Serial.println("connected");
       // Once connected, publish an announcement...
-      client.publish("/switch/relay/state", "connected");
+      client.publish("home/bedroom/switch1/set", "connected");
       // ... and resubscribe
-      client.subscribe("/switch/relay/switch");
+      client.subscribe("home/bedroom/switch1");
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
@@ -105,6 +105,6 @@ void loop() {
     snprintf (msg, 75, "connected", value);
     Serial.print("Publish message: ");
     Serial.println(msg);
-    client.publish("/switch/relay/state", msg);
+    client.publish("home/bedroom/switch1", msg);
   }
 }
