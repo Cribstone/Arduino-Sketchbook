@@ -78,6 +78,9 @@ public:
     // returns true if address is valid
     bool validAddress(const uint8_t*);
 
+    // returns true if address is of the family of sensors the lib supports.
+    bool validFamily(const uint8_t* deviceAddress);
+
     // finds an address at a given index on the bus
     bool getAddress(uint8_t*, uint8_t);
 
@@ -126,7 +129,7 @@ public:
     // sends command for one device to perform a temperature conversion by index
     bool requestTemperaturesByIndex(uint8_t);
 
-    // returns temperature raw value (12 bit integer of 1/16 degrees C)
+    // returns temperature raw value (12 bit integer of 1/128 degrees C)
     int16_t getTemp(const uint8_t*);
 
     // returns temperature in degrees C
