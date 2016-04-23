@@ -1,5 +1,5 @@
 //http://codeshield.diyode.com/code/rotary-rgbled/
-#include <Servo.h> 
+
 
 /* Rotary encoder read example */
 #define ENCODER_A 14
